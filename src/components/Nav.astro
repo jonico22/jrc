@@ -1,0 +1,234 @@
+---
+---
+
+<header class="main-header">
+    <div class="container header-container">
+        <a href="/" class="logo-link">
+            <img src="/public/logo.png" alt="JRC Ingenieros & Consultores Logo" class="logo-img">
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <ul class="nav-list" id="navList">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Metodología de Trabajo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navList">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+<style>
+
+.main-header {
+    background-color: var(--color-white);
+    height: var(--header-height);
+    position: sticky; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(47, 62, 70, 0.1); 
+    border-bottom: 1px solid #eaeaea;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- Logo Styles --- */
+.logo-link {
+    display: inline-block;
+    height: calc(var(--header-height) * 0.65); 
+    line-height: 0; 
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.main-nav {
+    display: block; 
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.main-nav li {
+    margin-left: 35px; 
+}
+
+.main-nav a {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem; 
+    color: var(--color-secondary);
+    text-decoration: none;
+    padding: 10px 5px; 
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: var(--color-primary);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100; 
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: 5px 0;
+    border-radius: 1px;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 600px) { 
+    .main-nav {
+       order: 2; 
+    }
+
+    .nav-list {
+        display: none; 
+        position: absolute;
+        top: 55px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        box-shadow: 0 5px 10px rgba(47, 62, 70, 0.1);
+        border-top: 1px solid #eaeaea;
+        height: auto; 
+        animation: slideDown 0.3s ease-out; 
+    }
+
+    .nav-list.nav-active {
+        display: flex; 
+    }
+
+    .main-nav li {
+        margin: 0; 
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block; 
+        padding: 15px 20px; 
+        border-bottom: 1px solid var(--color-neutral-light);
+    }
+    .main-nav li:last-child a {
+         border-bottom: none;
+    }
+
+    .main-nav a::after {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: block; 
+        order: 2; 
+    }
+
+    .menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', () => {
+
+            navList.classList.toggle('nav-active');
+            menuToggle.classList.toggle('active');
+
+            const isExpanded = navList.classList.contains('nav-active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        const navLinks = navList.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('nav-active')) {
+                    navList.classList.remove('nav-active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = navList.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && navList.classList.contains('nav-active')) {
+                navList.classList.remove('nav-active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
+</script>

@@ -1,0 +1,352 @@
+---
+import { Image } from 'astro:assets';
+import what01 from '../../assets/what01.webp';
+import what02 from '../../assets/what02.webp';
+import what03 from '../../assets/what03.webp';
+import what04 from '../../assets/what04.webp';
+import what05 from '../../assets/what05.webp';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+---
+
+<section id="que-hacemos" class="section services-section bg-white">
+    <div class="container">
+
+        <h2 class="section-title">¿Qué hacemos?</h2>
+
+        <p class="services-intro">
+            Ofrecemos un portafolio completo de servicios enfocados en asegurar la eficiencia, calidad y cumplimiento normativo de cada proyecto:
+        </p>
+
+    <div class="swiper services-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="service-card">
+                    <Image src={what01} alt="Equipo Profesional de JRC Ingenieros y Consultores" class="service-card-img" />
+                    <div class="service-card-content">
+                        <h3>Estudios de ingeniería</h3>
+                        <p>Desde perfil hasta expediente técnico detallado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="service-card">
+                    <Image src={what02} alt="Consultoría Técnica Especializada" class="service-card-img"/>
+                    <div class="service-card-content">
+                        <h3>Consultoría especializada</h3>
+                        <p>Soluciones técnicas adaptadas a cada necesidad específica.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="service-card">
+                    <Image src={what03} alt="ESupervisión Rigurosa de Obras" class="service-card-img"/>
+                    <div class="service-card-content">
+                        <h3>Supervisión de obras</h3>
+                        <p>Control de calidad, plazos y cumplimiento de normativas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="service-card">
+                    <Image src={what04} alt="Gestión Eficiente de Proyectos Mineros" class="service-card-img"/>
+                    <div class="service-card-content">
+                        <h3>Gestión de proyectos</h3>
+                        <p>Planificación, control y ejecución eficiente de inicio a fin.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="service-card">
+                    <Image src={what05} alt="Asesoría Estratégica para Minería" class="service-card-img"/>
+                    <div class="service-card-content">
+                        <h3>Asesoría estratégica</h3>
+                        <p>Para una toma de decisiones sólida, informada y sostenible.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div> 
+    </div> 
+   
+
+</section>
+
+
+<style>
+
+.services-section { 
+    /* Example: Use bg-white if previous was bg-light, or vice versa */
+}
+
+
+.services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto; 
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px; 
+}
+
+.service-card {
+    background-color: var(--color-white); 
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 5px 20px rgba(47, 62, 70, 0.12); 
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee; 
+}
+
+.service-card:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 8px 30px rgba(47, 62, 70, 0.18);
+}
+
+.service-card-img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.service-card-content {
+    padding: 25px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-content h3 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.35rem; 
+    color: var(--color-primary); 
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-secondary); 
+    margin-bottom: 0;
+    flex-grow: 1; 
+}
+
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+    }
+     .services-intro {
+        font-size: 1rem;
+        margin-bottom: 40px;
+     }
+     .service-card-content h3 {
+        font-size: 1.25rem;
+     }
+}
+
+@media (max-width: 480px) {
+     .service-card-content {
+          padding: 20px;
+     }
+}
+
+.services-section .services-intro { 
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    line-height: 1.7;
+}
+
+.services-swiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px; 
+    position: relative;
+    overflow: hidden; 
+}
+
+.swiper-slide {
+   display: flex; 
+   height: auto; 
+   align-items: stretch;
+}
+
+.service-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(47, 62, 70, 0.12);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+.swiper-slide:hover .service-card { 
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(47, 62, 70, 0.18);
+}
+
+.service-card-img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    display: block;
+}
+
+.service-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.service-card-content h3 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.service-card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-secondary);
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.services-swiper .swiper-pagination-bullet {
+    background-color: var(--color-secondary); 
+    opacity: 0.5;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+    background-color: var(--color-primary); 
+    opacity: 1;
+}
+
+.services-swiper .swiper-button-prev,
+.services-swiper .swiper-button-next {
+    color: var(--color-primary); 
+    background-color: rgba(255, 255, 255, 0.873); 
+    padding: 5px; 
+    transition: color 0.3s ease;
+    height: 40px; 
+    width: 40px; 
+    margin-top: -30px; 
+}
+
+.services-swiper .swiper-button-prev:hover,
+.services-swiper .swiper-button-next:hover {
+    color: var(--color-secondary); 
+}
+
+.services-swiper .swiper-button-prev::after,
+.services-swiper .swiper-button-next::after {
+    font-size: 1.2rem; 
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .services-swiper .swiper-button-prev {
+        left: 5px; 
+    }
+    .services-swiper .swiper-button-next {
+        right: 5px; 
+    }
+     .services-swiper {
+        padding-bottom: 50px; 
+     }
+}
+</style>
+<script>
+
+import Swiper from 'swiper';
+import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+
+document.addEventListener('DOMContentLoaded', function () {
+    const servicesSwiper = new Swiper('.services-swiper', {
+        modules: [Navigation, Pagination,Autoplay],
+        // Optional parameters
+        loop: false, // Enable continuous loop mode
+        grabCursor: false,
+        speed: 400,
+        autoplay: {
+            delay: 2000,
+        },
+        // How many slides to show
+        slidesPerView: 1,
+        spaceBetween: 20, 
+
+        // Responsive breakpoints
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 35
+            }
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, 
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+         // Accessibility
+        a11y: {
+            enabled: true,
+            prevSlideMessage: 'Diapositiva anterior',
+            nextSlideMessage: 'Diapositiva siguiente',
+            paginationBulletMessage: 'Ir a la diapositiva {{index}}',
+        },
+    });
+     // Optional: Add keyboard control
+     document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') {
+            servicesSwiper.slidePrev();
+        } else if (event.key === 'ArrowRight') {
+            servicesSwiper.slideNext();
+        }
+    });
+});
+
+   
+</script>

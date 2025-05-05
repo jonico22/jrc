@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets';
+import localAbout from '../../assets/about-home.webp';
+---
+
+<section id="nosotros" class="about-section section bg-light"> <!-- Use bg-light or bg-white -->
+    <div class="container">
+        <!-- Section Title (Centred) -->
+        <h2 class="section-title">¿Quiénes somos?</h2>
+        <div class="about-content-wrapper">
+
+            <!-- Text Column -->
+            <div class="about-text-content">
+                <p>En <strong>JRC Ingenieros y Consultores S.A.C.</strong> somos una empresa peruana dedicada a brindar servicios de consultoría, ingeniería y supervisión para proyectos del sector minero.</p>
+                <p>Nos especializamos en ofrecer soluciones técnicas de alta calidad, adaptadas a las necesidades de cada cliente, cumpliendo con los más altos estándares de seguridad, eficiencia y sostenibilidad ambiental.</p>
+                <p>Trabajamos con un equipo de profesionales expertos, comprometidos con el desarrollo responsable de la industria minera y la creación de valor para nuestros clientes y el entorno.</p>
+                <a href="#contacto" class="btn btn-secondary about-cta">Contáctanos</a> 
+            </div>
+
+            <div class="about-image-content">
+                <Image src={localAbout} alt="Equipo Profesional de JRC Ingenieros y Consultores" />
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+
+.bg-light {
+    background-color: var(--color-neutral-light); /* Gris Perla */
+}
+.bg-white {
+     background-color: var(--color-white);
+}
+
+/* --- About Section Specific Styles --- */
+.about-content-wrapper {
+    display: flex;
+    align-items: center; /* Vertically align text and image */
+    gap: 60px; /* Space between text and image columns */
+}
+
+.about-text-content {
+    flex: 1 1 55%; /* Allow text slightly more space, basis 55% */
+    color: var(--color-secondary); /* Gris Carbón for text */
+}
+
+.about-text-content h2 { /* If you decide to put the title here instead */
+   font-family: var(--font-title);
+   font-size: 2rem;
+   color: var(--color-primary);
+   margin-bottom: 25px;
+   text-align: left; /* Keep title left-aligned if inside column */
+}
+.about-text-content h2::after { /* Adjust underline if title is inside */
+     margin: 10px 0 0 0; /* Align left */
+     width: 50px;
+}
+
+
+.about-text-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.about-text-content p:last-of-type {
+    margin-bottom: 0; /* Remove margin from last paragraph */
+}
+.about-text-content strong {
+    font-weight: 600;
+    color: var(--color-primary); /* Highlight company name */
+}
+
+
+.about-image-content {
+    flex: 1 1 45%; /* Image takes remaining space, basis 45% */
+    text-align: center; /* Center image within its column if needed */
+}
+
+.about-image-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Subtle rounded corners */
+    box-shadow: 0 6px 25px rgba(47, 62, 70, 0.15); /* Soft shadow for depth */
+    margin-left: auto; /* Center image if flex basis allows */
+    margin-right: auto;
+}
+
+/* Optional Button Styling */
+.btn-secondary { /* Define if you use the button */
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    margin-top: 25px; /* Space above button */
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 106, 122, 0.2);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Tablet */
+    .about-content-wrapper {
+        gap: 40px; /* Reduce gap */
+    }
+    .about-text-content p {
+        font-size: 0.95rem;
+    }
+     .section-title {
+        font-size: 2rem;
+        margin-bottom: 50px;
+     }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .section {
+        padding: 60px 0;
+    }
+     .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+     }
+
+    .about-content-wrapper {
+        flex-direction: column; /* Stack image and text */
+        text-align: center; /* Center align text block on mobile */
+    }
+
+    .about-text-content {
+        flex-basis: auto; /* Reset flex basis */
+        order: 2; /* Place text below image */
+        text-align: left; /* Keep paragraphs readable */
+    }
+
+    .about-image-content {
+        flex-basis: auto; /* Reset flex basis */
+        order: 1; /* Place image above text */
+        max-width: 450px; /* Limit image width on mobile */
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Center the button on mobile if used */
+    .about-cta {
+         margin-left: auto;
+         margin-right: auto;
+    }
+}
+</style>

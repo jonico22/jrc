@@ -1,0 +1,92 @@
+---
+---
+
+<section class="hero-banner" id="inicio">
+    <div class="container hero-content">
+        <h1 class="hero-slogan">Tu aliado estratégico que transforma desafíos en oportunidades</h1>
+        <p class="hero-subtext">Soluciones expertas en ingeniería, consultoría y supervisión para el éxito de sus proyectos mineros.</p>
+    </div>
+</section>
+
+<style>
+
+.hero-banner {
+    position: relative;
+    background-image: linear-gradient(rgba(92, 94, 95, 0.75)), url('../../../public/bg-home.webp');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    min-height: 65vh;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    text-align: left;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.hero-banner h1 {
+    color: var(--color-white);
+}
+.hero-content {
+    max-width: 980px; 
+    z-index: 2;
+    position: relative;
+    animation: fadeInHeroLeft 1s ease-out forwards; 
+    text-align: left;
+}
+
+.hero-slogan {
+    font-family: var(--font-title);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 992px) {
+    .hero-banner {
+        min-height: 75vh;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .hero-slogan {
+        font-size: 2.6rem;
+    }
+     .hero-content {
+         max-width: 650px; 
+     }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        background-image: linear-gradient(rgba(92, 94, 95, 0.75)), url('../../../public/bg-home-movil.webp');
+        min-height: 76vh;
+        padding-top: 60px;
+        justify-content: center;
+        text-align: center;
+    }
+     .hero-content {
+         text-align: center;
+         max-width: 90%;
+     }
+    .hero-slogan {
+        font-size: 2.1rem;
+    }
+
+}
+
+@keyframes fadeInHeroLeft { 
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+</style>
