@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import Logo from '../assets/logo.png';
 ---
 
 <header class="main-header">
     <div class="container header-container">
         <a href="/" class="logo-link">
-            <img src="/public/logo.png" alt="JRC Ingenieros & Consultores Logo" class="logo-img">
+            <Image src={Logo} alt="JRC Ingenieros & Consultores Logo" class="logo-img" />
         </a>
         <nav class="main-nav" id="mainNav">
             <ul class="nav-list" id="navList">

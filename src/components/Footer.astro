@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import Logo from '../assets/logo.png';
 ---
 
 <footer class="main-footer">
@@ -7,7 +9,7 @@
 
             <div class="footer-column footer-brand">
                 <a href="/" class="footer-logo-link" aria-label="Página de Inicio JRC">
-                    <img src="/public/logo.png" alt="JRC Ingenieros & Consultores Logo" class="footer-logo">
+                    <Image src={Logo}  alt="JRC Ingenieros & Consultores Logo" class="footer-logo" />
                 </a>
                 <p class="footer-tagline">Tu aliado estratégico que transforma desafíos en oportunidades.</p>
             </div>
