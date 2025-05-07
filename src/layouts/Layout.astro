@@ -2,6 +2,20 @@
 import { AstroFont } from "astro-font";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+  image?: string;
+  description?: string;
+}
+
+const {
+  title = 'Jrc Ingenieros y Consultores',
+  description = 'Jrc Ingenieros y Consultores es una empresa dedicada a la consultoría y gestión de proyectos en el ámbito de la ingeniería civil y ambiental.',
+  image,
+} = Astro.props;
+
 ---
 
 <!doctype html>
@@ -10,13 +24,21 @@ import Footer from "../components/Footer.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jrc Ingenieros y Consultores</title>
+		<title>{title}</title>
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content="Jrc" />
 		<link rel="manifest" href="/site.webmanifest" />
+		 <!-- SEO -->
+		 <meta name="description" content={description} />
+		 <meta name="author" content={'Fernando Herrera'} />
+	 
+		 <!-- OG Metatags -->
+		 <meta property="og:title" content={title} />
+		 <meta property="og:description" content={description} />
+		 <meta property="og:image" content={image} />
 		<AstroFont
      	 config={[
         {
@@ -59,6 +81,7 @@ import Footer from "../components/Footer.astro";
         },
       ]}
     />
+	<ClientRouter />
 	</head>
 	<body>
 		<Nav />
