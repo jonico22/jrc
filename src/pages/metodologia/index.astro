@@ -1,0 +1,335 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import step01 from '../../assets/step01.webp';
+import step02 from '../../assets/step02.webp';
+import step03 from '../../assets/step03.webp';
+import step04 from '../../assets/step04.webp';
+import step05 from '../../assets/step05.webp';
+import step06 from '../../assets/step06.webp';
+---
+<Layout>
+    <section class="hero-methodology animated-hero"> <!-- Keep animated-hero if you have hero-specific animations -->
+        <div class="hero-methodology-overlay"></div> <!-- Added for overlay -->
+        <div class="container hero-methodology-content">
+            <h1 class="hero-title">Nuestra Metodología de Trabajo</h1>
+            <p class="hero-subtitle">
+                En JRC Ingenieros y Consultores S.A.C. aplicamos una metodología estructurada, eficiente y adaptable, que garantiza el éxito de cada proyecto desde la etapa inicial hasta su cierre.
+            </p>
+            <!-- Optional: Call to Action button if relevant for this page -->
+            <!-- <a href="#methodology-steps-section" class="btn btn-secondary hero-cta-methodology">Ver los Pasos</a> -->
+        </div>
+    </section>
+
+    
+    <section class="section steps-section-intro methodology-steps-section animated-hero ">
+        <div class="steps-section-intro">
+            <div class="step">
+                <div class="step-icon">
+                  <Image src={step01} alt="Diagnóstico y Análisis" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>1. Diagnóstico y Análisis  de Requerimientos</h3>
+                  <p>Escuchamos atentamente a nuestros clientes para entender sus necesidades, objetivos y condiciones específicas del proyecto. Realizamos un diagnóstico técnico y estratégico que nos permite definir el alcance y las soluciones más adecuadas.</p>
+                </div>
+              </div>
+          
+              <div class="step">
+                <div class="step-icon">
+                  <Image src={step02} alt=" Planificación Técnica" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>2. Planificación Técnica y Estratégica</h3>
+                  <p>Desarrollamos una planificación detallada, alineada con los objetivos del cliente, los plazos establecidos y las normativas vigentes. Este proceso incluye la asignación de recursos, cronogramas y estrategias de ejecución.</p>
+                </div>
+              </div>
+          
+              <div class="step">
+                <div class="step-icon">
+                    <Image src={step03} alt="Desarrollo y Ejecución" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>3. Desarrollo y Ejecución del Proyecto</h3>
+                  <p>Aplicamos nuestra experiencia y conocimientos técnicos para ejecutar los trabajos de manera eficiente, con tecnología especializada y bajo estrictos estándares de calidad, seguridad y sostenibilidad ambiental.</p>
+                </div>
+              </div>
+          
+              <div class="step">
+                <div class="step-icon">
+                    <Image src={step04} alt="Supervisión y Control" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>4. Supervisión y Control de Calidad</h3>
+                  <p>Monitoreamos continuamente el desarrollo del proyecto a través de controles técnicos, indicadores de desempeño y supervisión en campo, asegurando el cumplimiento de cada especificación y evitando desviaciones.</p>
+                </div>
+              </div>
+          
+              <div class="step">
+                <div class="step-icon">
+                    <Image src={step05} alt="Entrega y Evaluación" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>5. Entrega y Evaluación Final</h3>
+                  <p>Concluimos cada proyecto con una entrega formal, incluyendo la documentación técnica correspondiente. Evaluamos los resultados junto al cliente para asegurar su total satisfacción y generar oportunidades de mejora continua.</p>
+                </div>
+              </div>
+          
+              <div class="step">
+                <div class="step-icon">
+                    <Image src={step06} alt="Post-servicio y Seguimiento" class="img" />
+                </div>
+                <div class="step-content">
+                  <h3>6. Post-servicio y Seguimiento</h3>
+                  <p>Nos mantenemos disponibles para atender cualquier requerimiento posterior al servicio, fortaleciendo la relación con nuestros clientes a través de la confianza, el soporte y el acompañamiento profesional</p>
+                </div>
+              </div>
+        </div>
+    </section>
+</Layout>
+
+
+<style>
+    /* --- Hero Methodology Section --- */
+
+
+/* --- Hero Methodology Section --- */
+.hero-methodology {
+    position: relative; /* For overlay positioning */
+    background-color: var(--color-secondary); /* Fallback background */
+    /* --- IMPORTANT: Add a relevant, high-quality background image --- */
+    /* Example: A professional, abstract image related to planning, engineering, or mining processes */
+    background-image: url('../../../public/hero02.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    padding: 100px 0; /* Generous vertical padding */
+    min-height: 40vh; /* Ensure a decent height, adjust as needed */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content by default */
+    text-align: center; /* Center text within .hero-methodology-content */
+    overflow: hidden; /* Prevent overlay bleed */
+}
+
+/* Dark Overlay for better text readability */
+.hero-methodology-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 62, 70, 0.8); /* Gris Carbón with opacity (var(--color-secondary) base) */
+    z-index: 1;
+}
+
+.hero-methodology-content {
+    position: relative; /* To sit on top of the overlay */
+    z-index: 2;
+    max-width: 900px; /* Control width of hero text */
+    margin: 0 auto; /* Centering within the container (if container has padding) */
+}
+
+.hero-methodology .hero-title { /* Renamed from h1 for clarity if using global h1 styles */
+    font-family: var(--font-title);
+    font-size: 3rem; /* Large title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Subtle shadow for depth */
+}
+
+.hero-methodology .hero-subtitle { /* Renamed from .hero-methodology-intro */
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    opacity: 0.95; /* Slightly less prominent than title */
+    max-width: 750px;
+    margin: 0 auto 30px auto; /* Center and add bottom margin if CTA follows */
+}
+
+.methodology-steps-section {
+    padding: 60px 0; 
+    background-color: var(--color-neutral-light); 
+}
+
+.steps-section-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-white); /* White background for contrast */
+}
+.hero-methodology-content {
+    max-width: 900px; /* Control width of hero text */
+    margin: 0 auto;
+}
+
+.hero-methodology h1 {
+    font-family: var(--font-title);
+    font-size: 2.8rem; /* Large title */
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--color-white);;
+}
+
+.hero-methodology-intro {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.9; /* Slightly less prominent */
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(47, 62, 70, 0.08);
+      border: 1px solid #eee;
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .step-icon {
+      flex-shrink: 0;
+
+      background-color: var(--color-principal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .img {
+        width: 100%;
+        height: 200px; 
+        object-fit: cover; 
+        display: block;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .step-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    .step-content h3 {
+      margin: 0 0 0.5rem;
+      color: var(--gris-oscuro);
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      line-height: 25px;
+      color: var(--color-secondary);
+    }
+
+
+    .step-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555; /* Slightly lighter text */
+        margin-bottom: 0;
+    }
+@media (max-width: 992px) {
+    .hero-methodology h1 {
+        font-size: 2.4rem;
+    }
+    .hero-methodology-intro {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .step {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    .step-icon {
+        margin: 0 auto;
+      }
+    .hero-methodology {
+        padding: 60px 0 40px 0;
+    }
+    .hero-methodology h1 {
+        font-size: 2rem;
+    }
+    .hero-methodology-intro {
+        font-size: 1rem;
+    }
+    .step-content h3 {
+        font-size: 1.25rem;
+    }
+    .step-content p {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 480px) {
+    .steps-section-intro {
+       margin: auto 0.5em;
+       padding: 20px 0;
+    }
+}
+
+/* --- Hero Animation (Keep from previous or adapt) --- */
+.animated-hero .hero-methodology-content > * , .steps-section-intro > * {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Ensure you have @keyframes fadeInUp defined */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.animated-hero .hero-methodology-content .hero-title {
+    animation-delay: 0.2s;
+}
+.animated-hero .hero-methodology-content .hero-subtitle {
+    animation-delay: 0.4s;
+}
+.animated-hero .hero-methodology-content .hero-cta-methodology {
+    animation-delay: 0.6s;
+} 
+
+@keyframes fadeInUp { /* Ensure this animation is defined in your CSS */
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* --- Responsive Adjustments for Hero Methodology --- */
+@media (max-width: 992px) { /* Tablet */
+    .hero-methodology {
+        padding: 80px 0;
+        min-height: 55vh;
+    }
+    .hero-methodology .hero-title {
+        font-size: 2.6rem;
+    }
+    .hero-methodology .hero-subtitle {
+        font-size: 1.1rem;
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .hero-methodology {
+        padding: 60px 20px; /* Add horizontal padding on mobile */
+        min-height: 70vh;
+    }
+    .hero-methodology .hero-title {
+        font-size: 2.1rem;
+    }
+    .hero-methodology .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%; /* Allow full width within padding */
+    }
+    /* .hero-cta-methodology {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    } */
+}
+
+
+/* --- Methodology Steps Section --- */
+</style>
