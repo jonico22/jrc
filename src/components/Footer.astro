@@ -17,11 +17,11 @@ import Logo from '../assets/logo.png';
             <div class="footer-column footer-links">
                 <h4 class="footer-heading">Navegación</h4>
                 <ul class="footer-nav-list">
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#servicios">Metodología de Trabajo</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="/politica-privacidad">Política de Privacidad</a></li> <!-- Adjust link -->
+                    <li><a href="/nosotros">Nosotros</a></li>
+                    <li><a href="/servicios">Servicios</a></li>
+                    <li><a href="/servicios">Metodología de Trabajo</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                    <li><a href="/politicas">Política de Privacidad</a></li> <!-- Adjust link -->
                 </ul>
             </div>
 
@@ -59,10 +59,11 @@ import Logo from '../assets/logo.png';
     </div> 
 </footer>
 <div class="footer-bottom">
-    <p>© <span id="currentYear"></span> JRC Ingenieros y Consultores S.A.C. Todos los derechos reservados.</p>
+    <p>© <span id="currentYear"></span> JRC Ingenieros y Consultores S.A.C. <br/>
+         Todos los derechos reservados.</p>
 </div>
 
-<script is:inline>
+<script type="text/javascript">
     if (!document.getElementById('currentYear').textContent) {
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     }

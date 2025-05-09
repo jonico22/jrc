@@ -81,7 +81,7 @@ const {
         },
       ]}
     />
-	<ClientRouter />
+
 	</head>
 	<body>
 		<Nav />
@@ -172,3 +172,43 @@ const {
 			margin: 15px auto 0;
 		}
   </style>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', () => {
+
+            navList.classList.toggle('nav-active');
+            menuToggle.classList.toggle('active');
+
+            const isExpanded = navList.classList.contains('nav-active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        const navLinks = navList.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('nav-active')) {
+                    navList.classList.remove('nav-active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = navList.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && navList.classList.contains('nav-active')) {
+                navList.classList.remove('nav-active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
+</script>
