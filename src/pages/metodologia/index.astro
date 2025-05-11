@@ -94,22 +94,20 @@ import step06 from '../../assets/step06.webp';
 
 /* --- Hero Methodology Section --- */
 .hero-methodology {
-    position: relative; /* For overlay positioning */
-    background-color: var(--color-secondary); /* Fallback background */
-    /* --- IMPORTANT: Add a relevant, high-quality background image --- */
-    /* Example: A professional, abstract image related to planning, engineering, or mining processes */
+    position: relative; 
+    background-color: var(--color-secondary); 
     background-image: url('../../../public/hero02.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     color: var(--color-white);
-    padding: 100px 0; /* Generous vertical padding */
-    min-height: 40vh; /* Ensure a decent height, adjust as needed */
+    padding: 100px 0; 
+    min-height: 40vh; 
     display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content by default */
-    text-align: center; /* Center text within .hero-methodology-content */
-    overflow: hidden; /* Prevent overlay bleed */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    overflow: hidden; 
 }
 
 /* Dark Overlay for better text readability */
@@ -281,13 +279,6 @@ import step06 from '../../assets/step06.webp';
 .animated-hero .hero-methodology-content .hero-cta-methodology {
     animation-delay: 0.6s;
 } 
-
-@keyframes fadeInUp { /* Ensure this animation is defined in your CSS */
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 
 /* --- Responsive Adjustments for Hero Methodology --- */

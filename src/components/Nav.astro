@@ -52,9 +52,11 @@ import Logo from '../assets/logo.png';
 }
 
 .logo-img {
-    height: 100%;
+    height: 65px;
     width: auto;
     display: block;
+    position: relative;
+    top: -3px;
 }
 
 .main-nav {
@@ -125,6 +127,9 @@ import Logo from '../assets/logo.png';
 }
 
 @media (max-width: 600px) { 
+    .logo-img {
+        left: -15px;
+    }
     .main-nav {
        order: 2; 
     }
@@ -132,7 +137,7 @@ import Logo from '../assets/logo.png';
     .nav-list {
         display: none; 
         position: absolute;
-        top: 55px; 
+        top: 64px; 
         left: 0;
         width: 100%;
         background-color: var(--color-white);

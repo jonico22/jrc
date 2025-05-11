@@ -1,0 +1,108 @@
+.contact-heading {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    line-height: 30px;
+    border-bottom: 2px solid var(--color-neutral-light); 
+}
+
+/* --- Form Styles --- */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-secondary); 
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 90%;
+    padding: 12px 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-secondary);
+    background-color: var(--color-white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 106, 122, 0.2); 
+}
+
+.form-group textarea {
+    resize: vertical; 
+    min-height: 120px;
+}
+
+.form-submit-btn { 
+    width: auto; 
+    min-width: 180px; 
+    font-size: 1.05rem;
+}
+
+/* --- Form Validation & Status Messages --- */
+.error-message {
+    color: #D8000C; /* Red for errors */
+    background-color: #FFD2D2; /* Light red background */
+    border: 1px solid #D8000C;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.submit-status {
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.submit-status.success {
+    color: #270; /* Dark green text */
+    background-color: #DFF2BF; /* Light green background */
+    border: 1px solid #4F8A10;
+}
+
+.submit-status.error {
+    color: #D8000C; /* Red text */
+    background-color: #FFD2D2; /* Light red background */
+    border: 1px solid #D8000C;
+}
+
+.contact-form-container {
+    flex: 1; /* Allow columns to share space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+@media (max-width: 992px) {
+     .contact-heading {
+        font-size: 1.6rem;
+     }
+}
+
+@media (max-width: 768px) {
+
+    .contact-form-container {
+        min-width: 100%; /* Full width when stacked */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}

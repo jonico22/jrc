@@ -1,6 +1,146 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/Contact/ContactForm.tsx';
 ---
 
 <Layout title="Contacto" description="Contacto de JRC Ingenieros y Consultores">
+  <section class="hero-standard animated-hero"> 
+    <div class="hero-standard-overlay"></div>
+    <div class="container hero-standard-content">
+        <h1 class="hero-title">CONTÁCTENOS</h1>
+        <p class="hero-subtitle">Estamos listos para escuchar sobre su proyecto y ofrecerle las mejores soluciones.</p>
+    </div>
+</section>
+<section id="contact-form-section" class="section contact-section bg-light">
+  <div class="container">
+      <div class="contact-wrapper">
+
+          <ContactForm client:idle /> 
+          <div class="contact-info-container animate-on-scroll" data-aos-delay="200"> 
+              <h2 class="contact-heading">Información de Contacto</h2>
+              <div class="info-block">
+                  <h4>Correo Electrónico</h4>
+                  <p><a href="mailto:info@jrcingenierosconsultores.com">info@jrcingenierosconsultores.com</a></p>
+              </div>
+              <div class="info-block">
+                  <h4>Redes Sociales</h4>
+                  <div class="contact-social-icons">
+                    <a href="https://facebook.com/your-page" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Facebook" class="social-icon">
+                        <svg fill="#ffffff" width="28" height="28" viewBox="0 0 28 28"><path d="M22,12A10,10 0 1,0 12,22V14.5H9.5V12H12V9.5C12,7.57 13.57,6 15.5,6H18V8.5H16C15.17,8.5 14.5,9.17 14.5,10V12H18L17.5,14.5H14.5V22A10,10 0 0,0 22,12Z" /></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-company" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro LinkedIn" class="social-icon">
+                        <svg fill="#ffffff" width="28" height="28" viewBox="0 0 28 28"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.34 17V10.5H5.67V17H8.34M7 9.33C7.85 9.33 8.53 8.65 8.53 7.8C8.53 6.95 7.85 6.27 7 6.27C6.15 6.27 5.47 6.95 5.47 7.8C5.47 8.65 6.15 9.33 7 9.33M18.33 17V13.39C18.33 11.24 17.06 10.5 15.77 10.5C14.62 10.5 14.1 11.14 13.8 11.63V10.5H11.16C11.19 11.13 11.16 17 11.16 17H13.8V13.53C13.8 12.93 13.86 12.34 14.63 12.34C15.39 12.34 15.4 13.03 15.4 13.58V17H18.33Z" /></svg>
+                    </a>
+                  </div>
+              </div>
+          </div> 
+      </div> 
+  </div> 
+</section>
   </Layout>
+
+  <style>
+
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 50px; 
+    align-items: flex-start; 
+}
+
+.contact-form-container,
+.contact-info-container {
+    flex: 1; 
+    min-width: 300px;
+}
+
+
+.contact-info-container {
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    padding: 30px;
+    margin-top: 5em;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(47, 62, 70, 0.08); 
+}
+
+svg {
+
+    fill: var(--color-secondary); 
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+.info-block:last-child {
+    margin-bottom: 0;
+}
+
+.info-block h4 {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-secondary); 
+    margin-bottom: 8px;
+}
+
+.info-block p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555; 
+    margin: 0;
+}
+
+.info-block p a {
+    color: var(--color-primary); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.info-block p a:hover {
+    color: var(--color-secondary); 
+    text-decoration: underline;
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+.social-icon-contact svg { 
+    width: 28px; 
+    height: 28px;
+    fill: var(--color-secondary); 
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+.social-icon-contact:hover svg {
+    fill: var(--color-primary); 
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+     .contact-heading {
+        font-size: 1.6rem;
+     }
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column; 
+        gap: 30px; 
+    }
+    .contact-form-container,
+    .contact-info-container {
+        min-width: 100%; 
+        width: 100%;
+    }
+    .contact-info-container {
+        margin-top: 0; 
+    }
+}
+  </style>
