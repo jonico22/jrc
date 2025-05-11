@@ -2,7 +2,6 @@ export const prerender = false; //This will not work without this line
 
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
-import { contactFormSchema } from '../../components/Contact/types'; // Adjust path as needed
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
@@ -24,8 +23,8 @@ export const POST: APIRoute = async ({ request }) => {
   const contactSubject = dataForm.get("contactSubject")
  try {
 
-  const fromEmail = import.meta.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'; // Your verified "from" email
-  const toEmail = import.meta.env.CONTACT_FORM_TO_EMAIL || 'your-receiving-email@example.com'; // Where you want to receive emails
+  const fromEmail = import.meta.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'; 
+  const toEmail = import.meta.env.CONTACT_FORM_TO_EMAIL || 'your-receiving-email@example.com';
 
   if (!contactName || !contactEmail || !contactMessage) {
     return new Response(
@@ -37,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
         statusText: "Did not provide the right data",
       },
     );
-  } // Sending information to Resend
+  } 
 
   const {  error } = await resend.emails.send({
     from: `JRC formulario de contacto <${fromEmail}>`, 
