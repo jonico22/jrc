@@ -244,6 +244,10 @@ const {
 
 <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
+
+	if (!document.getElementById('currentYear').textContent) {
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    }	
     const menuToggle = document.getElementById('menuToggle');
     const navList = document.getElementById('navList');
 
