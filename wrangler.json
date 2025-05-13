@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jrc-web",
+  "compatibility_date": "2025-04-25",
+  "assets": {
+    "directory": "./dist"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "a007c0c250bb4ce9b126c30e73528560"
+    }
+  ]
+}
