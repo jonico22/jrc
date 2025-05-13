@@ -4,21 +4,20 @@ import { Image } from 'astro:assets';
 import service01 from '../../assets/service01.webp';
 import service02 from '../../assets/service02.webp';
 import service03 from '../../assets/service03.webp';
+import  Expandable  from '../../components/Expandable.astro';
 ---
 
-<Layout title="Servicios" description="Servicios de JRC Ingenieros y Consultores">
-  <section class="hero-standard animated-hero"> <!-- Reusable hero class -->
+<Layout title="Servicios - Jrc Ingenieros y Consultores" description="Servicios de JRC Ingenieros y Consultores">
+  <section class="hero-standard animated-hero"> 
     <div class="hero-standard-overlay"></div>
     <div class="container hero-standard-content">
         <h1 class="hero-title">NUESTROS SERVICIOS</h1>
         <p class="hero-subtitle">Soluciones integrales y especializadas para el éxito de sus proyectos en el sector minero.</p>
     </div>
 </section>
- <!-- Contenido de Servicios con Tabs -->
  <main class="services-page-content section">
   <div class="container">
 
-      <!-- Servicio 1: INGENIERÍA -->
       <article class="service-detail-block animate-on-scroll">
           <div class="service-image-container">
             <Image src={service01} alt="Servicios de Ingeniería JRC" class="main-service-img" />
@@ -26,11 +25,9 @@ import service03 from '../../assets/service03.webp';
           <div class="service-text-content">
               <h2>INGENIERÍA</h2>
               <p>Ofrecemos servicios integrales de ingeniería para el sector minero, abarcando estudios geotécnicos para el análisis de estabilidad y diseño de obras de contención; geología aplicada para la caracterización del terreno y apoyo en exploración; geofísica mediante métodos no invasivos para la evaluación del subsuelo y detección de estructuras; diseño civil de infraestructuras como caminos, plataformas y edificaciones industriales; y soluciones hidráulicas para la gestión del agua, incluyendo drenaje, presas y control de escorrentías, asegurando un enfoque técnico, seguro y sostenible en cada etapa del proyecto minero.</p>
-              <a href="#detalle-ingenieria-pagina-separada" class="btn btn-primary service-detail-btn">Conocer Más</a>
+              <a href="/servicios/ingenieria" class="btn btn-primary service-detail-btn">Conocer Más</a>
           </div>
       </article>
-
-      <!-- Servicio 2: COSTOS Y PRESUPUESTOS (Alternating Layout with Tabs) -->
       <article class="service-detail-block alternate-layout animate-on-scroll">
         <div class="service-image-container">
           <Image src={service02} alt="Costos y Presupuestos JRC" />
@@ -40,33 +37,24 @@ import service03 from '../../assets/service03.webp';
               <p>Ofrecemos un servicio integral de costos y presupuestos enfocado en la gestión financiera de proyectos mineros e infraestructura, asegurando que cada proyecto sea ejecutado dentro de los márgenes presupuestarios establecidos, con el control de costos y tiempos óptimos.</p>
               <p>Nuestro equipo de expertos realiza estudios detallados y análisis exhaustivos de los costos involucrados en cada fase del proyecto, desde la planificación inicial hasta la ejecución. </p>
 
-              <!-- Tabs for Descripción de servicios -->
-              <div class="service-tabs-container">
-                  <div class="service-tab-buttons">
-                      <button class="service-tab-button " data-tab="costos-descripcion">Descripción Detallada</button>
-                  </div>
-                  <div class="service-tab-content-wrapper">
-                      <div id="costos-descripcion" class="service-tab-content ">
-                        <p>Desarrollamos presupuestos detallados, análisis de costos unitarios, estimaciones de inversión, auditorías de costos y evaluaciones de variación para ayudar a los clientes a tomar decisiones informadas y mejorar la eficiencia económica de sus proyectos.</p>
-                        <p>Utilizamos herramientas avanzadas de software de estimación y control de costos, lo que nos permite ofrecer presupuestos precisos, flexibles y actualizados, adaptados a los cambios y desafíos que puedan surgir durante el desarrollo del proyecto.</p>
+              <Expandable
+                      title="Descripción Detallada"
+                      id="costos-descripcion">
+                  <p>Desarrollamos presupuestos detallados, análisis de costos unitarios, estimaciones de inversión, auditorías de costos y evaluaciones de variación para ayudar a los clientes a tomar decisiones informadas y mejorar la eficiencia económica de sus proyectos.</p>
+                  <p>Utilizamos herramientas avanzadas de software de estimación y control de costos, lo que nos permite ofrecer presupuestos precisos, flexibles y actualizados, adaptados a los cambios y desafíos que puedan surgir durante el desarrollo del proyecto.</p>
 
-                          <h4>Descripción de servicios:</h4>
-                          <ul>
-                              <li>Análisis de costo unitario.</li>
-                              <li>Estimaciones de CAPEX y OPEX.</li>
-                              <li>Estimaciones de costos de cierre.</li>
-                              <li>Preparación del cronograma de construcción.</li>
-                              <li>Estimaciones de cantidades y distribución de recursos.</li>
-                              <li>Elaboración de planificaciones valoradas (curva S).</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          
+                    <h4>Descripción de servicios:</h4>
+                    <ul>
+                        <li>Análisis de costo unitario.</li>
+                        <li>Estimaciones de CAPEX y OPEX.</li>
+                        <li>Estimaciones de costos de cierre.</li>
+                        <li>Preparación del cronograma de construcción.</li>
+                        <li>Estimaciones de cantidades y distribución de recursos.</li>
+                        <li>Elaboración de planificaciones valoradas (curva S).</li>
+                    </ul>
+              </Expandable>
+          </div>      
       </article>
-
-      <!-- Servicio 3: SERVICIOS DE CONSTRUCCIÓN (with Tabs) -->
       <article class="service-detail-block animate-on-scroll">
            <div class="service-image-container">
             <Image src={service03} alt="Servicios de Construcción JRC" class="main-service-img" />
@@ -75,30 +63,24 @@ import service03 from '../../assets/service03.webp';
               <h2>SERVICIOS DE CONSTRUCCIÓN</h2>
               <p>Ofrecemos servicios integrales de construcción para proyectos mineros e infraestructura, asegurando la ejecución eficiente, segura y sostenible de cada obra. Nos especializamos en la gestión de proyectos de construcción, desde la planificación hasta la entrega final, garantizando que cada fase del proyecto se realice con los más altos estándares de calidad y conforme a las normativas vigentes.</p>
               <p>Nuestro equipo de construcción trabaja en conjunto con las áreas de ingeniería y diseño, brindando soluciones en la ejecución de obras civiles, estructuras, redes hidráulicas, sistemas de drenaje, plataformas mineras, accesos viales, trabajos con geosintéticos, entre otros.</p>
-              <div class="service-tabs-container">
-                  <div class="service-tab-buttons">
-                      <button class="service-tab-button " data-tab="construccion-descripcion">Descripción Detallada</button>
-                  </div>
-                  <div class="service-tab-content-wrapper">
-                      <div id="construccion-descripcion" class="service-tab-content ">
-                        <p>Cada proyecto es desarrollado con un enfoque en la seguridad operativa, el cumplimiento de plazos y el control de costos, asegurando que las obras se entreguen en condiciones óptimas. Además, implementamos un riguroso control de calidad en cada proyecto, utilizando procedimientos y herramientas de monitoreo para garantizar que todas las actividades de construcción cumplan con los más altos estándares de seguridad, durabilidad y sostenibilidad. </p>
-                        <p>Todo esto se realiza bajo una estricta supervisión y con el objetivo de optimizar los recursos y minimizar el impacto ambiental.</p>
-
-                          <h4>Descripción de servicios:</h4>
-                          <ul>
-                              <li>Gestión de la construcción.</li>
-                              <li>Control de costes y progreso.</li>
-                              <li>Planificación de la construcción.</li>
-                              <li>Control de calidad para obras civiles, movimientos de tierra e instalación de geosintéticos.</li>
-                              <li>Control y ensayos en construcción de terraplenes o rellenos masivos.</li>
-                              <li>Inspección de cimentaciones y/o inspección de superficies de cimentación.</li>
-                              <li>Inspección de soldadura de revestimiento de geomembrana (fusión y extrusión).</li>
-                              <li>Control de calidad en la soldadura de tuberías sólidas de HDPE de diferentes diámetros y espesores.</li>
-                              <li>Ensayos de permeabilidad del revestimiento del suelo en campo.</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
+              <Expandable
+                      title="Descripción Detallada"
+                      id="construccion-descripcion">
+                      <p>Cada proyecto es desarrollado con un enfoque en la seguridad operativa, el cumplimiento de plazos y el control de costos, asegurando que las obras se entreguen en condiciones óptimas. Además, implementamos un riguroso control de calidad en cada proyecto, utilizando procedimientos y herramientas de monitoreo para garantizar que todas las actividades de construcción cumplan con los más altos estándares de seguridad, durabilidad y sostenibilidad. </p>
+                      <p>Todo esto se realiza bajo una estricta supervisión y con el objetivo de optimizar los recursos y minimizar el impacto ambiental.</p>
+                      <h4>Descripción de servicios:</h4>
+                      <ul>
+                          <li>Gestión de la construcción.</li>
+                          <li>Control de costes y progreso.</li>
+                          <li>Planificación de la construcción.</li>
+                          <li>Control de calidad para obras civiles, movimientos de tierra e instalación de geosintéticos.</li>
+                          <li>Control y ensayos en construcción de terraplenes o rellenos masivos.</li>
+                          <li>Inspección de cimentaciones y/o inspección de superficies de cimentación.</li>
+                          <li>Inspección de soldadura de revestimiento de geomembrana (fusión y extrusión).</li>
+                          <li>Control de calidad en la soldadura de tuberías sólidas de HDPE de diferentes diámetros y espesores.</li>
+                          <li>Ensayos de permeabilidad del revestimiento del suelo en campo.</li>
+                      </ul>
+              </Expandable>
           </div>
       </article>
 
@@ -334,7 +316,9 @@ import service03 from '../../assets/service03.webp';
         font-size: 0.9rem;
         padding: 10px;
     }
-
+    .service-image-container img{
+        max-height: 300px; 
+    }
 }
 </style>
 <script is:inline>

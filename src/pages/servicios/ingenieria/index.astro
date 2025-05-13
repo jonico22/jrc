@@ -1,0 +1,281 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import  Expandable  from '../../../components/Expandable.astro';
+import { Image } from 'astro:assets';
+import serv01 from '../../../assets/serv01.webp';
+import serv02 from '../../../assets/serv02.webp';
+import serv03 from '../../../assets/serv03.webp';
+import serv04 from '../../../assets/serv04.webp';
+import serv05 from '../../../assets/serv05.webp';
+---
+
+<Layout title="Servicios de Ingeniería - Jrc Ingenieros y Consultores" description="Servicios de Ingenieria JRC Ingenieros y Consultores">
+
+<section class="hero-standard animated-hero">
+    <div class="hero-standard-overlay"></div>
+    <div class="container hero-standard-content">
+        <h1 class="hero-title">SERVICIOS DE INGENIERÍA</h1>
+        <p class="hero-subtitle">Soluciones técnicas avanzadas para la minería y la infraestructura, desde el diseño hasta la ejecución.</p>
+    </div>
+</section>
+
+<main class="engineering-subservices-page section bg-white">
+    <div class="container">
+
+        <article class="sub-service-block animate-on-scroll">
+            <div class="sub-service-image-container">
+                <Image src={serv01} alt="Servicios de Geotecnia JRC"  />
+            </div>
+            <div class="sub-service-text-content">
+                <h2>GEOTECNIA</h2>
+                <p>Ofrecemos soluciones especializadas en geotecnia para proyectos mineros e infraestructura relacionada, asegurando la estabilidad, seguridad y eficiencia operativa desde la fase de diseño hasta la ejecución.</p>
+                <p>Nuestro servicio incluye el diseño geotécnico de depósitos de relaves, depósitos de lixiviados, botaderos de desmonte de mina y otras infraestructuras críticas, aplicando metodologías avanzadas, análisis de estabilidad, caracterización de suelos y modelamientos numéricos especializados.</p>
+                <p>Nos apoyamos en tecnología de vanguardia y un equipo de profesionales altamente capacitados para ofrecer estudios confiables, sustentables y alineados a las normativas nacionales e internacionales. Cada proyecto que desarrollamos tiene un enfoque en la optimización técnica, la sostenibilidad ambiental y la seguridad a largo plazo.</p>
+                <Expandable
+                    title="Descripción de Servicios"
+                    id="geotecnia-details">
+                    <ul>
+                        <li>Investigaciones de campo geotécnicas y geológicas.</li>
+                        <li>Supervisión y ejecución de muestreos DPL, SPT, LPT, CPT, suelos y rocas.</li>
+                        <li>Supervisión y ejecución de ensayos de permeabilidad de Lefranc y Lugeon.</li>
+                        <li>Interpretación de resultados de ensayos de laboratorio geotécnico.</li>
+                        <li>Identificación, evaluación, muestreo y estudio de canteras.</li>
+                        <li>Análisis de estabilidad física de pilas de lixiviación, depósitos de relaves, depósitos de desechos mineros, material inadecuado y orgánico:</li>
+                        <ul> 
+                            <li>Análisis de estabilidad física 2D y 3D en taludes de materiales naturales o artificiales.</li>
+                            <li>Análisis de infiltración en presas de tierra y relaves.</li>
+                            <li>Análisis de respuesta sísmica y estabilidad.</li>
+                            <li>Análisis de interfaces suelo/geosintéticos.</li>
+                        </ul>
+                        <li>Modelado numérico de estructuras y problemas geotécnicos.</li>
+                        <li>Estudios del potencial de licuefacción de suelos naturales.</li>
+                        <li>Estudios de licuefacción de relaves y minerales en pilas de lixiviación.</li>
+                        <li>Estudios de riesgo sísmico.</li>
+                        <li>Estudios de peligro sísmico probabilístico.</li>
+                        <li>Estudios de peligro sísmico determinístico.</li>
+                    </ul>
+                </Expandable>
+                
+            </div>
+        </article>
+
+        <article class="sub-service-block alternate-layout animate-on-scroll">
+            <div class="sub-service-image-container">
+                <Image src={serv02} alt="Servicios de Geofísica Aplicada JRC"  />
+            </div>
+            <div class="sub-service-text-content">
+                <h2>GEOFÍSICA</h2>
+                <p>Ofrecemos servicios de geofísica aplicada para la exploración y caracterización del subsuelo en proyectos mineros e infraestructura.</p>
+                <p>Realizamos estudios utilizando métodos eléctricos, electromagnéticos, sísmicos y gravimétricos, que permiten obtener información precisa sobre las condiciones geológicas, estructurales y geotécnicas del terreno.</p>
+                <p>Nuestros servicios de geofísica optimizan la toma de decisiones en el diseño de obras civiles, la ubicación de depósitos de relaves, botaderos de desmonte, depósitos de lixiviados y la evaluación de riesgos geológicos, todo bajo un enfoque de eficiencia técnica, innovación y compromiso ambiental.</p>
+                <Expandable 
+                    id="geofisica-details"
+                    title=" Descripción de Servicios">
+                    <ul>
+                        <li>Ensayos de refracción sísmica.</li>
+                        <li>Ensayos de arreglo multicanal de ondas superficiales (MASW, 1D, 2D y 3D).</li>
+                        <li>Ensayos de medición de microtremores mediante array multicanal (MAM, 1D y 2D).</li>
+                    </ul>
+                </Expandable>
+            </div>   
+        </article>
+        <article class="sub-service-block animate-on-scroll">
+            <div class="sub-service-image-container">
+                <Image src={serv03} alt="Servicios de Geología Aplicada JRC"  />
+            </div>
+            <div class="sub-service-text-content">
+                <h2>GEOLOGÍA</h2>
+                <p>Ofrecemos servicios especializados en geología aplicada al sector minero e infraestructura, proporcionando información precisa y estratégica para la evaluación, planificación y ejecución de proyectos.</p>
+                <p>Nuestro servicio abarca cartografía geológica, geología estructural, caracterización geológica de depósitos de relaves, lixiviados y botaderos de desmonte, así como el análisis de riesgos geológicos.</p>
+                <p>Contamos con un equipo de geólogos expertos que utilizan metodologías modernas y herramientas tecnológicas de última generación para asegurar resultados confiables, que optimizan los diseños de ingeniería y fortalecen la gestión ambiental y de riesgos. Nuestro enfoque combina rigurosidad científica, innovación y un compromiso firme con el desarrollo sostenible.</p>
+                <Expandable 
+                    id="geologia-details"
+                    title="Descripción de Servicios">
+                    <ul>
+                        <li>Mapeo geológico y estructural.</li>
+                        <li>Diseño y supervisión de instrumentación geotécnica, piezómetros hidráulicos, piezómetros de cuerda vibrante, inclinómetros, celdas de presión de cuerda vibrante, sensores de asentamiento, entre otros.</li>
+                        <li>Cartografía geológica-geotécnica detallada.</li>
+                        <li>Estudios de zonificación de riesgo geodinámico externo.</li>
+                        <li>Evaluación de peligros y riesgos por fenómenos naturales.</li>
+                        <li>Evaluación de riesgos y peligros kársticos.</li>
+                        <li>Estudios geológicos y estructurales, locales y regionales.</li>
+                        <li>Inspecciones geológico-geotécnicas durante la construcción y operación.</li>
+                    </ul>
+                </Expandable>
+            </div>
+        </article>
+        <article class="sub-service-block alternate-layout animate-on-scroll">
+            <div class="sub-service-image-container">
+                <Image src={serv04} alt="Diseño Civil para Minería JRC"  />
+            </div>
+            <div class="sub-service-text-content">
+                <h2>DISEÑO CIVIL</h2>
+                <p>Ofrecemos servicios de diseño civil especializados para proyectos mineros e infraestructura, desarrollando soluciones integrales que combinan eficiencia técnica, seguridad y sostenibilidad.</p>
+                <p>Nos especializamos en el diseño de obras civiles como vías de acceso, plataformas de operación, sistemas de drenaje, cimentaciones especiales, estructuras de contención, depósitos de relaves, botaderos de desmonte y depósitos de lixiviados.</p>
+                <p>Cada diseño es realizado bajo estrictos estándares de calidad, considerando criterios geotécnicos, hidrológicos, estructurales y ambientales para garantizar un desempeño seguro, eficiente y de largo plazo. Nuestro equipo técnico trabaja con herramientas de modelamiento y diseño de última generación, adaptando cada proyecto a las necesidades específicas de nuestros clientes y al entorno donde se desarrollan.</p>
+                <Expandable 
+                    id="diseno-civil-details"
+                    title="Descripción de Servicios">
+                    <ul>
+                        <li>Selección de sitio y estudios conceptuales, de prefactibilidad y factibilidad.</li>
+                        <li>Diseño de depósitos de relaves convencionales, espesados, en pasta y filtrados.</li>
+                        <li>Diseño de instalaciones de lixiviación, disposición de relaves, materiales excedentes y presas de tierra.</li>
+                        <li>Modificación y recrecimiento de presas de relaves.</li>
+                        <li>Ingeniería básica y de detalle.</li>
+                        <li>Movimiento de suelos, subdrenaje, recolección y conducción de lixiviados.</li>
+                        <li>Gestión de aguas superficiales.</li>
+                        <li>Plan de manejo de laguna de aguas claras.</li>
+                        <li>Balance hídrico.</li>
+                        <li>Elaboración de especificaciones, manuales de QA/QC.</li>
+                        <li>Estimación de Capex y Opex.</li>
+                        <li>Optimización de costos.</li>
+                        <li>Desarrollo de planos de ingeniería y construcción.</li>
+                        <li>Elaboración de cronogramas de construcción.</li>
+                        <li>Plan de explotación de cantera.</li>
+                        <li>Plan de cierre y seguimiento post-cierre.</li>
+                        <li>Auditoría post-construcción.</li>
+                    </ul>
+                </Expandable>
+            </div>         
+        </article>
+        <article class="sub-service-block animate-on-scroll">
+            <div class="sub-service-image-container">
+                <Image src={serv05} alt="Ingeniería Hidráulica JRC"  />
+            </div>
+            <div class="sub-service-text-content">
+                <h2>HIDRÁULICA</h2>
+                <p>Ofrecemos servicios especializados en ingeniería hidráulica, enfocados en el diseño, análisis y optimización de sistemas hidráulicos para proyectos mineros e infraestructura. Nuestro enfoque garantiza soluciones eficientes y sostenibles para el manejo de recursos hídricos en condiciones desafiantes.</p>
+                <p>Nos especializamos en el diseño de sistemas de drenaje, canales, embalses, plantas de tratamiento de aguas, redes de distribución y recolección de aguas pluviales y subterráneas, adaptando cada proyecto a las características geográficas y ambientales de cada sitio. Utilizamos software avanzado y simulaciones numéricas para realizar estudios precisos sobre flujo de agua, control de inundaciones y manejo eficiente de recursos hídricos.</p>
+                <p>Cada solución hidráulica que ofrecemos cumple con los más altos estándares de calidad, seguridad y protección ambiental, con el objetivo de optimizar el uso del agua y minimizar el impacto ambiental en el ciclo de vida de los proyectos.</p>
+                <Expandable 
+                id="hidraulica-details"
+                title="Descripción de Servicios">
+                <ul>
+                    <li>Estudios hidrológicos, meteorológicos y recursos hídricos.</li>
+                    <li>Balance hidrológico de cuencas hidrográficas.</li>
+                    <li>Diseño de estructuras hidráulicas para diferentes niveles de ingeniería.</li>
+                    <li>Simulación unidimensional y bidimensional de estructuras hidráulicas.</li>
+                    <li>Diseño de estanques de subdrenaje para caminos y vías de acarreo.</li>
+                </ul>
+                </Expandable>
+            </div>
+        </article>
+
+    </div>
+</main>
+</Layout>
+
+<style>
+
+.engineering-subservices-page {
+     background-color: var(--color-white) ; 
+}
+
+.sub-service-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+    gap: 50px; 
+    margin-bottom: 70px;
+    padding-bottom: 40px; 
+    border-bottom: 1px solid var(--color-neutral-light); 
+}
+.sub-service-block:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.sub-service-image-container {
+    flex: 1 1 40%; 
+    min-width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(47, 62, 70, 0.1);
+}
+.sub-service-image-container img {
+    width: 100%;
+    max-height: 500px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 8px; 
+    transition: transform 0.4s ease;
+}
+.sub-service-block:hover .sub-service-image-container img {
+    transform: scale(1.03);
+}
+
+.sub-service-text-content {
+    flex: 1 1 55%; 
+    min-width: 300px;
+}
+
+.sub-service-text-content h2 {
+    font-family: var(--font-title);
+    font-size: 1.8rem; 
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-neutral-light); 
+}
+
+.sub-service-text-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--color-secondary);
+}
+
+.sub-service-block.alternate-layout .sub-service-image-container {
+    order: 2;
+}
+.sub-service-block.alternate-layout .sub-service-text-content {
+    order: 1;
+}
+
+@media (max-width: 992px) {
+    .sub-service-block {
+        gap: 30px;
+    }
+    .sub-service-text-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub-service-block,
+    .sub-service-block.alternate-layout {
+        flex-direction: column;
+    }
+    .sub-service-block.alternate-layout .sub-service-image-container,
+    .sub-service-block.alternate-layout .sub-service-text-content {
+        order: unset;
+    }
+    .sub-service-image-container {
+        width: 100%;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sub-service-text-content h2 {
+        font-size: 1.5rem;
+        text-align: center; 
+    }
+    .sub-service-block {
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+    }
+    .expandable-trigger {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+    }
+}
+@media (max-width: 600px) {
+    .sub-service-image-container img {
+        max-height: 300px; 
+    }
+    ul {
+        padding-left: 20px; 
+    }
+}
+</style>

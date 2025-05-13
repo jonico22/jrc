@@ -56,10 +56,6 @@ import why05 from '../../assets/why05.webp';
 
 <style>
 
-.why-us-section {
-    /* Example: Use bg-light if previous was bg-white, or vice versa */
-}
-
 .reasons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -68,7 +64,6 @@ import why05 from '../../assets/why05.webp';
 
 .reason-card {
     background-color: var(--color-white);
-    padding: 20px 20px; 
     border-radius: 8px;
     text-align: center; 
     box-shadow: 0 5px 25px rgba(47, 62, 70, 0.08); 
@@ -106,6 +101,7 @@ import why05 from '../../assets/why05.webp';
     margin-top: 0;
     margin-bottom: 0;
     line-height: 25px;
+    padding: 0 10px; 
 }
 
 .reason-card p {
@@ -114,6 +110,7 @@ import why05 from '../../assets/why05.webp';
     color: #555; 
     margin-bottom: 0;
     flex-grow: 1; 
+    padding: 0 20px; 
 }
 
 
@@ -123,12 +120,7 @@ import why05 from '../../assets/why05.webp';
     .reasons-grid {
         gap: 25px;
     }
-    .reason-card {
-        padding: 30px 25px;
-    }
-    .reason-icon {
-        font-size: 2.5rem;
-    }
+
     .reason-card h3 {
         font-size: 1.2rem;
     }

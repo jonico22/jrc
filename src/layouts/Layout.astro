@@ -235,6 +235,10 @@ const {
 			.hero-standard { padding: 70px 20px; min-height: 30vh; }
 			.hero-standard .hero-title { font-size: 2.2rem; }
 			.hero-standard .hero-subtitle { font-size: 1rem; } 
+			.section-title {
+				font-size: 1.7rem;
+				margin-bottom: 40px;
+			}
 		}
   </style>
 
@@ -274,6 +278,29 @@ const {
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
+		const expandableTriggers = document.querySelectorAll('.expandable-trigger');
+
+		expandableTriggers.forEach(trigger => {
+			trigger.addEventListener('click', function() {
+				const contentId = this.getAttribute('aria-controls');
+				const content = document.getElementById(contentId);
+				const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+				if (content) {
+					if (isExpanded) {
+						this.setAttribute('aria-expanded', 'false');
+						this.querySelector('.expandable-icon').textContent = '+';
+						content.style.maxHeight = null; // Collapse
+						content.classList.remove('open');
+					} else {
+						this.setAttribute('aria-expanded', 'true');
+						this.querySelector('.expandable-icon').textContent = '-'; // Or use rotate transform for '+'
+						content.classList.add('open');
+						content.style.maxHeight = content.scrollHeight + "px"; // Expand
+					}
+				}
+			});
+		});
     }
 });
 </script>

@@ -1,0 +1,82 @@
+---
+const { title,id } = Astro.props;
+---
+
+<div class="expandable-details">
+    <button class="expandable-trigger" aria-expanded="false" aria-controls={id}>
+        {title}
+        <span class="expandable-icon">+</span>
+    </button>
+    <div id={id} class="expandable-content">
+        <slot />
+    </div>
+</div>
+
+<style>
+    /* --- Expandable Details (Accordion-like) --- */
+.expandable-details {
+    margin-top: 25px;
+    border: 1px solid #e0e0e0; 
+    border-radius: 6px;
+    background-color: var(--color-white); 
+}
+
+.expandable-trigger {
+    background-color: var(--color-neutral-light); 
+    color: var(--color-secondary); 
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0 0; 
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+.expandable-trigger:hover {
+    background-color: #e0e0e0; 
+}
+
+.expandable-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.expandable-content {
+    padding: 0 20px; 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    background-color: var(--color-white);
+    border-top: 1px solid #e0e0e0; 
+    border-radius: 0 0 6px 6px; 
+}
+.expandable-content.open {
+    padding: 20px; 
+}
+
+.expandable-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 5px;
+    margin-bottom: 0; 
+}
+.expandable-content li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #555;
+}
+.expandable-content ul ul { 
+    list-style: circle;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+</style>
