@@ -1,6 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../assets/logo.png';
+const { pathname } = Astro.url;
+
+const navLinks = [
+  { href: "/nosotros/", text: "Nosotros" },
+  { href: "/servicios/", text: "Servicios" },
+  { href: "/metodologia/", text: "Metodología" },
+  { href: "/contacto/", text: "Contacto" },
+];
 ---
 
 <header class="main-header">
@@ -10,10 +18,29 @@ import Logo from '../assets/logo.png';
         </a>
         <nav class="main-nav" id="mainNav">
             <ul class="nav-list" id="navList">
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/servicios">Servicios</a></li>
-                <li><a href="/metodologia">Metodología de Trabajo</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                {navLinks.map(link => {
+                    const isHomePage = link.href === "/";
+                    let isActive;
+                    if (isHomePage) {
+                      isActive = pathname === "/";
+                    } else {
+                      const normalizedPathname = pathname.endsWith('/') && pathname.length > 1 ? pathname : pathname + '/';
+                      const normalizedLinkHref = link.href.endsWith('/') && link.href.length > 1 ? link.href : link.href + '/';
+                      isActive = normalizedPathname.startsWith(normalizedLinkHref);
+                    }
+              
+                    return (
+                      <li>
+                        <a
+                          href={link.href}
+                          class={isActive ? 'active' : ''}
+                          aria-current={isActive ? 'page' : undefined}
+                        >
+                          {link.text}
+                        </a>
+                      </li>
+                    );
+                })}
             </ul>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navList">
@@ -84,13 +111,16 @@ import Logo from '../assets/logo.png';
     position: relative;
     transition: color 0.3s ease;
 }
-
+.main-nav a.active {
+    font-weight: bold;
+    color: var(--color-primary);
+}
 .main-nav a:hover,
 .main-nav a:focus {
     color: var(--color-primary);
 }
 
-.main-nav a::after {
+.main-nav a::after , .main-nav .active::after {
     content: '';
     position: absolute;
     width: 0;
