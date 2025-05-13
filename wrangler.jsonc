@@ -3,7 +3,7 @@
   "name": "jrc-web",
   "compatibility_date": "2025-04-25",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
   },
   "kv_namespaces": [
     {

@@ -11,10 +11,14 @@ interface ApiResponse {
   message: string;
 }
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  url: URL
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({url}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<ApiResponse | null>(null);
-
+  console.log("URL:", url.hostname);
   const {
     register,
     handleSubmit,
@@ -35,7 +39,7 @@ const ContactForm: React.FC = () => {
         formData.append('contactSubject', data.contactSubject);
         formData.append('contactMessage', data.contactMessage);
     
-      const response = await axios.post<ApiResponse>('/api/sendEmail.json', formData,
+      const response = await axios.post<ApiResponse>('/api/sendEmail', formData,
         {
             headers: {
                 'Content-Type': 'multipart/form-data',

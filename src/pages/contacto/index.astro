@@ -15,7 +15,7 @@ import ContactForm from '../../components/Contact/ContactForm.tsx';
   <div class="container">
       <div class="contact-wrapper">
 
-          <ContactForm client:idle /> 
+          <ContactForm  url={Astro.url} client:idle/> 
           <div class="contact-info-container animate-on-scroll" data-aos-delay="200"> 
               <h2 class="contact-heading">Información de Contacto</h2>
               <div class="info-block">

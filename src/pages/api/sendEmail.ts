@@ -16,7 +16,6 @@ export const POST: APIRoute = async ({ request }) => {
   }
   
   const dataForm = await request.formData();
-  console.log("Content-Type:", dataForm);
   const contactName = dataForm.get("contactName");
   const contactEmail = dataForm.get("contactEmail");
   const contactMessage = dataForm.get("contactMessage"); 
