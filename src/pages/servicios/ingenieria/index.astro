@@ -21,7 +21,14 @@ import serv05 from '../../../assets/serv05.webp';
 
 <main class="engineering-subservices-page section bg-white">
     <div class="container">
-
+        <div class="back-to-services-container">
+                <a href="/servicios" class="btn btn-secondary btn-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="btn-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                    Volver a Servicios
+                </a>
+            </div>
         <article class="sub-service-block animate-on-scroll">
             <div class="sub-service-image-container">
                 <Image src={serv01} alt="Servicios de Geotecnia JRC"  />
@@ -168,7 +175,8 @@ import serv05 from '../../../assets/serv05.webp';
 <style>
 
 .engineering-subservices-page {
-     background-color: var(--color-white) ; 
+     background-color: var(--color-white);
+     padding: 40px 0 80px 0; 
 }
 
 .sub-service-block {
@@ -232,6 +240,59 @@ import serv05 from '../../../assets/serv05.webp';
 .sub-service-block.alternate-layout .sub-service-text-content {
     order: 1;
 }
+
+
+.back-to-services-container {
+    margin-bottom: 50px; 
+}
+
+/* --- Button Styles (Ensure these or similar exist) --- */
+.btn {
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    padding: 10px 20px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent; /* Base for bordered buttons */
+}
+
+.btn-primary { /* Assuming this exists and is your main CTA button style */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #005663; /* Darker primary */
+    border-color: #005663;
+    transform: translateY(-2px);
+}
+
+.btn-secondary { /* Style for "Back" or less prominent buttons */
+    background-color: transparent;
+    color: var(--color-secondary); /* Gris Carbón */
+    border-color: var(--color-secondary); /* Gris Carbón border */
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-secondary); /* Gris Carbón background on hover */
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.btn-icon { /* For icons inside buttons */
+    width: 16px;
+    height: 16px;
+    display: inline-block; /* Or flex item handling */
+    /* Fill will be inherited if SVG uses currentColor */
+}
+
 
 @media (max-width: 992px) {
     .sub-service-block {

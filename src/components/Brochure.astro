@@ -1,0 +1,193 @@
+---
+---
+
+<section class="brochure-download-bar-section"> <!-- Optional outer section wrapper -->
+    <div class="container">
+        <div class="brochure-download-bar animate-on-scroll">
+            <div class="bar-icon">
+                <!-- Icon: Document (Example SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                    <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708-1.33.886a.5.5 0 0 1-.8-.43l.57-1.71a.5.5 0 0 1 .129-.287l1.368-1.368a.5.5 0 0 1 .707 0l1.369 1.368a.5.5 0 0 1 .128.287l.57 1.71a.5.5 0 0 1-.799.43l-1.33-.886a.5.5 0 0 1-.207-.064z"/>
+                </svg>
+            </div>
+            <div class="bar-text">
+                <p>Conozca más sobre nuestros servicios y experiencia. <strong>Descargue nuestro brochure corporativo.</strong></p>
+            </div>
+            <div class="bar-action">
+                <!-- *** IMPORTANT: Replace '#' with the actual path to your PDF brochure *** -->
+                <a href="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/Presentacio%CC%81n%20JRC.pdf" target="_blank" class="btn btn-primary btn-small download-bar-btn" download="JRC_Ingenieros_Brochure.pdf">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="btn-icon" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Descargar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+
+/* --- Brochure CTA Section --- */
+.brochure-cta-section {
+    padding: 70px 0;
+    text-align: center; 
+    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #005f6b 100%); 
+    color: var(--color-white); 
+}
+
+.brochure-cta-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.brochure-cta-icon {
+    margin-bottom: 25px;
+}
+.brochure-cta-icon svg {
+    width: 56px; 
+    height: 56px;
+    fill: var(--color-primary); 
+}
+
+.brochure-cta-title {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.brochure-download-btn { 
+    font-size: 1.1rem; 
+    padding: 14px 35px;
+    display: inline-flex; 
+    align-items: center;
+    gap: 10px; 
+}
+.brochure-download-btn .btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.brochure-download-bar-section {
+    padding: 40px 0;
+}
+
+.brochure-download-bar {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background-color: var(--color-secondary); 
+    color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(47, 62, 70, 0.2); 
+}
+
+.brochure-download-bar .bar-icon {
+    margin-right: 20px;
+    flex-shrink: 0; 
+}
+.brochure-download-bar .bar-icon svg {
+    width: 32px;
+    height: 32px;
+    display: block; 
+}
+
+.brochure-download-bar .bar-text {
+    flex-grow: 1; 
+    margin-right: 20px; 
+}
+.brochure-download-bar .bar-text p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-neutral-light); 
+}
+.brochure-download-bar .bar-text strong {
+    color: var(--color-white); 
+    font-weight: 600;
+}
+
+.brochure-download-bar .bar-action {
+    flex-shrink: 0; 
+}
+
+.btn-small { 
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+.download-bar-btn { 
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+.download-bar-btn .btn-icon {
+    width: 16px; 
+    height: 16px;
+}
+
+
+/* --- Responsive Adjustments for the Bar --- */
+@media (max-width: 768px) {
+    .brochure-download-bar {
+        flex-direction: column; 
+        text-align: center;
+        padding: 25px;
+    }
+    .brochure-download-bar .bar-icon {
+        margin-right: 0;
+        margin-bottom: 15px; 
+    }
+    .brochure-download-bar .bar-text {
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+    .brochure-download-bar .bar-action {
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+    }
+    .download-bar-btn {
+        width: auto; 
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brochure-download-bar .bar-text p {
+        font-size: 0.9rem;
+    }
+    .download-bar-btn {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .brochure-cta-section {
+        padding: 50px 20px; 
+    }
+    .brochure-cta-title {
+        font-size: 1.7rem;
+    }
+    .brochure-cta-text {
+        font-size: 1rem;
+    }
+    .brochure-download-btn {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+    .brochure-cta-icon svg {
+        width: 48px;
+        height: 48px;
+    }
+}
+</style>

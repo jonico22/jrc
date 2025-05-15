@@ -9,22 +9,19 @@ import step05 from '../../assets/step05.webp';
 import step06 from '../../assets/step06.webp';
 ---
 <Layout title="Metodología de Trabajo - Jrc Ingenieros y Consultores" description="Metodología de Trabajo de JRC Ingenieros y Consultores">
-    <section class="hero-methodology animated-hero"> <!-- Keep animated-hero if you have hero-specific animations -->
-        <div class="hero-methodology-overlay"></div> <!-- Added for overlay -->
+    <section class="hero-methodology animated-hero"> 
+        <div class="hero-methodology-overlay"></div> 
         <div class="container hero-methodology-content">
             <h1 class="hero-title">Nuestra Metodología de Trabajo</h1>
             <p class="hero-subtitle">
                 En JRC Ingenieros y Consultores S.A.C. aplicamos una metodología estructurada, eficiente y adaptable, que garantiza el éxito de cada proyecto desde la etapa inicial hasta su cierre.
             </p>
-            <!-- Optional: Call to Action button if relevant for this page -->
-            <!-- <a href="#methodology-steps-section" class="btn btn-secondary hero-cta-methodology">Ver los Pasos</a> -->
         </div>
     </section>
 
-    
-    <section class="section steps-section-intro methodology-steps-section animated-hero ">
+    <section class="section steps-section-intro methodology-steps-section  ">
         <div class="steps-section-intro">
-            <div class="step">
+            <div class="step animate-on-scroll">
                 <div class="step-icon">
                   <Image src={step01} alt="Diagnóstico y Análisis" class="img" />
                 </div>
@@ -34,7 +31,7 @@ import step06 from '../../assets/step06.webp';
                 </div>
               </div>
           
-              <div class="step">
+              <div class="step animate-on-scroll">
                 <div class="step-icon">
                   <Image src={step02} alt=" Planificación Técnica" class="img" />
                 </div>
@@ -44,7 +41,7 @@ import step06 from '../../assets/step06.webp';
                 </div>
               </div>
           
-              <div class="step">
+              <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <Image src={step03} alt="Desarrollo y Ejecución" class="img" />
                 </div>
@@ -54,7 +51,7 @@ import step06 from '../../assets/step06.webp';
                 </div>
               </div>
           
-              <div class="step">
+              <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <Image src={step04} alt="Supervisión y Control" class="img" />
                 </div>
@@ -64,7 +61,7 @@ import step06 from '../../assets/step06.webp';
                 </div>
               </div>
           
-              <div class="step">
+              <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <Image src={step05} alt="Entrega y Evaluación" class="img" />
                 </div>
@@ -74,7 +71,7 @@ import step06 from '../../assets/step06.webp';
                 </div>
               </div>
           
-              <div class="step">
+              <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <Image src={step06} alt="Post-servicio y Seguimiento" class="img" />
                 </div>
@@ -89,10 +86,7 @@ import step06 from '../../assets/step06.webp';
 
 
 <style>
-    /* --- Hero Methodology Section --- */
 
-
-/* --- Hero Methodology Section --- */
 .hero-methodology {
     position: relative; 
     background-color: var(--color-secondary); 
@@ -110,40 +104,39 @@ import step06 from '../../assets/step06.webp';
     overflow: hidden; 
 }
 
-/* Dark Overlay for better text readability */
 .hero-methodology-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(47, 62, 70, 0.8); /* Gris Carbón with opacity (var(--color-secondary) base) */
+    background-color: rgba(47, 62, 70, 0.8); 
     z-index: 1;
 }
 
 .hero-methodology-content {
-    position: relative; /* To sit on top of the overlay */
+    position: relative; 
     z-index: 2;
-    max-width: 900px; /* Control width of hero text */
-    margin: 0 auto; /* Centering within the container (if container has padding) */
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
-.hero-methodology .hero-title { /* Renamed from h1 for clarity if using global h1 styles */
+.hero-methodology .hero-title { 
     font-family: var(--font-title);
-    font-size: 3rem; /* Large title */
+    font-size: 3rem; 
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Subtle shadow for depth */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); 
 }
 
-.hero-methodology .hero-subtitle { /* Renamed from .hero-methodology-intro */
+.hero-methodology .hero-subtitle { 
     font-family: var(--font-body);
     font-size: 1.2rem;
     line-height: 1.7;
-    opacity: 0.95; /* Slightly less prominent than title */
+    opacity: 0.95; 
     max-width: 750px;
-    margin: 0 auto 30px auto; /* Center and add bottom margin if CTA follows */
+    margin: 0 auto 30px auto; 
 }
 
 .methodology-steps-section {
@@ -154,16 +147,16 @@ import step06 from '../../assets/step06.webp';
 .steps-section-intro {
     max-width: 900px;
     margin: 0 auto;
-    background-color: var(--color-white); /* White background for contrast */
+    background-color: var(--color-white); 
 }
 .hero-methodology-content {
-    max-width: 900px; /* Control width of hero text */
+    max-width: 900px; 
     margin: 0 auto;
 }
 
 .hero-methodology h1 {
     font-family: var(--font-title);
-    font-size: 2.8rem; /* Large title */
+    font-size: 2.8rem; 
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -174,7 +167,7 @@ import step06 from '../../assets/step06.webp';
     font-family: var(--font-body);
     font-size: 1.15rem;
     line-height: 1.7;
-    opacity: 0.9; /* Slightly less prominent */
+    opacity: 0.9; 
     max-width: 750px;
     margin: 0 auto;
 }
@@ -263,11 +256,9 @@ import step06 from '../../assets/step06.webp';
     }
 }
 
-/* --- Hero Animation (Keep from previous or adapt) --- */
 .animated-hero .hero-methodology-content > * , .steps-section-intro > * {
     opacity: 0;
     transform: translateY(30px);
-    /* Ensure you have @keyframes fadeInUp defined */
     animation: fadeInUp 0.8s ease-out forwards;
 }
 .animated-hero .hero-methodology-content .hero-title {
@@ -281,8 +272,7 @@ import step06 from '../../assets/step06.webp';
 } 
 
 
-/* --- Responsive Adjustments for Hero Methodology --- */
-@media (max-width: 992px) { /* Tablet */
+@media (max-width: 992px) {
     .hero-methodology {
         padding: 80px 0;
         min-height: 55vh;
@@ -296,9 +286,9 @@ import step06 from '../../assets/step06.webp';
     }
 }
 
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) { 
     .hero-methodology {
-        padding: 60px 20px; /* Add horizontal padding on mobile */
+        padding: 60px 20px; 
         min-height: 70vh;
     }
     .hero-methodology .hero-title {
@@ -306,14 +296,8 @@ import step06 from '../../assets/step06.webp';
     }
     .hero-methodology .hero-subtitle {
         font-size: 1rem;
-        max-width: 100%; /* Allow full width within padding */
+        max-width: 100%; 
     }
-    /* .hero-cta-methodology {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    } */
 }
 
-
-/* --- Methodology Steps Section --- */
 </style>

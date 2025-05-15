@@ -8,28 +8,29 @@ import ven04 from '../../assets/ven04.webp';
 import ven05 from '../../assets/ven05.webp';
 import ven06 from '../../assets/ven06.webp';
 import ven07 from '../../assets/ven07.webp';
+import Brochure from '../../components/Brochure.astro';
 ---
 
 <Layout title="Nosotros - Jrc Ingenieros y Consultores" description="Nosotors de JRC Ingenieros y Consultores">
 
-    <section class="hero-standard animated-hero"> <!-- Reusable hero class -->
+    <section class="hero-standard animated-hero"> 
         <div class="hero-standard-overlay"></div>
         <div class="container hero-standard-content">
             <h1 class="hero-title">NOSOTROS</h1>
-            <!-- Optional: Short tagline for the about us page -->
             <p class="hero-subtitle">Conectando innovación, experiencia y compromiso para construir un futuro con propósito.</p>
         </div>
     </section>
+   
 
     <section id="proposito" class="section purpose-section bg-white">
-        <div class="container narrow-container animate-on-scroll"> <!-- Narrow container for focus -->
+        <div class="container narrow-container animate-on-scroll"> 
             <h2 class="section-title">Nuestro Propósito</h2>
             <p class="purpose-text">
                 En JRC Ingenieros y Consultores SAC, impulsamos el crecimiento de nuestros clientes con soluciones inteligentes, sostenibles y confiables. Nuestra razón de ser, es transformar ideas en proyectos exitosos, conectando innovación, experiencia y compromiso para construir un futuro con propósito.
             </p>
         </div>
     </section>
-
+    
     <section id="mision-vision" class="section mission-vision-section bg-light">
         <div class="container">
             <div class="mission-vision-grid">
@@ -37,13 +38,14 @@ import ven07 from '../../assets/ven07.webp';
                     <h3>Misión</h3>
                     <p>Brindar servicios integrales de consultoría, ingeniería y supervisión con altos estándares de calidad, eficiencia y responsabilidad, contribuyendo al desarrollo sostenible de nuestros clientes y del entorno. Nos comprometemos a ofrecer soluciones innovadoras y personalizadas, respaldadas por un equipo técnico altamente calificado y una gestión orientada a la excelencia.</p>
                 </div>
-                <div class="mission-vision-card animate-on-scroll" data-aos-delay="200"> <!-- Example AOS delay -->
+                <div class="mission-vision-card animate-on-scroll" > 
                     <h3>Visión</h3>
                     <p>Ser una empresa líder a nivel nacional y reconocida a nivel internacional por la calidad de nuestros servicios de consultoría, ingeniería y supervisión, destacando por nuestra ética profesional, compromiso con el desarrollo sostenible y la generación de valor para nuestros clientes y la sociedad.</p>
                 </div>
             </div>
         </div>
     </section>
+     <Brochure />
 
     <section id="ventajas" class="section advantages-section bg-white">
         <div class="container">
@@ -102,39 +104,35 @@ import ven07 from '../../assets/ven07.webp';
 
 <style>
 
-
-/* --- Purpose Section --- */
 .purpose-section {
     background-color: var(--color-white);
-    /* bg-white or bg-light handled by class */
 }
-.narrow-container { /* For focused text blocks */
+.narrow-container { 
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 .purpose-section .section-title {
-    color: var(--color-secondary); /* If on light bg */
+    color: var(--color-secondary); 
 }
 .purpose-section .section-title::after {
-    background-color: var(--color-secondary); /* If on light bg */
+    background-color: var(--color-secondary); 
 }
 .purpose-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #444; /* Slightly darker than default paragraph text */
+    color: #444; 
     text-align: center;
-    margin-top: -20px; /* Pull up if section title has large bottom margin */
+    margin-top: -20px; 
 }
 
 /* --- Mission & Vision Section --- */
 .mission-vision-section {
-    background-color: var(--color-neutral-light); /* Light background */
-    /* bg-light or bg-white */
+    background-color: var(--color-neutral-light); 
 }
 .mission-vision-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default to 1 column */
+    grid-template-columns: 1fr; 
     gap: 40px;
 }
 .mission-vision-card {
@@ -161,9 +159,8 @@ import ven07 from '../../assets/ven07.webp';
     color: var(--color-secondary);
 }
 
-/* --- Advantages Section --- */
 .advantages-section {
-    /* bg-white or bg-light */
+    padding: 20px 0 80px;
 }
 .advantages-intro {
     text-align: center;
@@ -178,7 +175,7 @@ import ven07 from '../../assets/ven07.webp';
     gap: 30px;
 }
 .advantage-card {
-    background-color: var(--color-neutral-light); /* Or var(--color-white) */
+    background-color: var(--color-neutral-light); 
     padding: 30px 25px;
     border-radius: 8px;
     text-align: center; /* Align content left within card */
@@ -211,23 +208,10 @@ import ven07 from '../../assets/ven07.webp';
     margin-top: 0;
 }
 
-/* --- General Animation Styles (if using JS IntersectionObserver) --- */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Stagger animations slightly for better effect */
 .mission-vision-card.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
 .advantage-card.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
 .advantage-card.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
 .advantage-card.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
-/* ... and so on, or use AOS data-aos-delay */
-
 
 /* --- Responsive Adjustments --- */
 @media (min-width: 768px) { /* Tablet and up for Mision/Vision */
@@ -239,9 +223,7 @@ import ven07 from '../../assets/ven07.webp';
     }
 }
 
-@media (min-width: 992px) { /* Larger screens for Advantages Grid 
-    /* Example to force 3 columns if you have 7 items and want the last one centered in a new row */
-    /* Or if you use the placeholder and want clean 3 columns */
+@media (min-width: 992px) { 
      .advantages-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -254,19 +236,19 @@ import ven07 from '../../assets/ven07.webp';
     
 }
 
-@media (max-width: 767px) { /* Mobile hero */
+@media (max-width: 767px) { 
     .hero-standard { padding: 70px 20px; min-height: 30vh; }
     .hero-standard .hero-title { font-size: 2.2rem; }
     .hero-standard .hero-subtitle { font-size: 1rem; }
     .purpose-text { font-size: 1rem; }
     .mission-vision-card h3 { font-size: 1.4rem; }
     .advantage-card h4 { font-size: 1.1rem; }
-    .section-title { /* More space below title */
+    .section-title { 
         line-height: 40px;
         font-size: 1.8rem;
     }
     .section {
-        padding: 40px 10px; /* Adjust padding */
+        padding: 40px 10px; 
     }
 }
 </style>
