@@ -43,7 +43,7 @@ import serv05 from '../../../assets/serv05.webp';
                     id="geotecnia-details">
                     <ul>
                         <li>Investigaciones de campo geotécnicas y geológicas.</li>
-                        <li>Supervisión y ejecución de muestreos DPL, SPT, LPT, CPT, suelos y rocas.</li>
+                        <li>Supervisión y ejecución de muestreos DPL, SPT, suelos.</li>
                         <li>Supervisión y ejecución de ensayos de permeabilidad de Lefranc y Lugeon.</li>
                         <li>Interpretación de resultados de ensayos de laboratorio geotécnico.</li>
                         <li>Identificación, evaluación, muestreo y estudio de canteras.</li>
@@ -55,16 +55,14 @@ import serv05 from '../../../assets/serv05.webp';
                             <li>Análisis de interfaces suelo/geosintéticos.</li>
                         </ul>
                         <li>Modelado numérico de estructuras y problemas geotécnicos.</li>
-                        <li>Estudios del potencial de licuefacción de suelos naturales.</li>
                         <li>Estudios de licuefacción de relaves y minerales en pilas de lixiviación.</li>
                         <li>Estudios de riesgo sísmico.</li>
-                        <li>Estudios de peligro sísmico probabilístico.</li>
+                        <li>Estudios de peligro sísmico probabilístico y determinístico.</li>
                     </ul>
                 </Expandable>
                 
             </div>
         </article>
-
         <article class="sub-service-block alternate-layout animate-on-scroll">
             <div class="sub-service-image-container">
                 <Image src={serv02} alt="Servicios de Geofísica Aplicada JRC"  />
@@ -125,21 +123,16 @@ import serv05 from '../../../assets/serv05.webp';
                     <ul>
                         <li>Selección de sitio y estudios conceptuales, de prefactibilidad y factibilidad.</li>
                         <li>Diseño de depósitos de relaves convencionales, espesados, en pasta y filtrados.</li>
-                        <li>Diseño de instalaciones de lixiviación, disposición de relaves, materiales excedentes y presas de tierra.</li>
-                        <li>Modificación y recrecimiento de presas de relaves.</li>
-                        <li>Ingeniería básica y de detalle.</li>
-                        <li>Movimiento de suelos, subdrenaje, recolección y conducción de lixiviados.</li>
-                        <li>Gestión de aguas superficiales.</li>
-                        <li>Plan de manejo de laguna de aguas claras.</li>
-                        <li>Balance hídrico.</li>
+                        <li>Elaboración de estudios e ingeniería para planes de cierre de minas.</li>
+                        <li>Diseño y modificación para recrecimiento de depósitos de relaves.</li>
+                        <li>Ingeniería básica y de detalle para estructuras mineras.</li>
+                        <li>Balance hídrico para depósitos de relaves.</li>
                         <li>Elaboración de especificaciones, manuales de QA/QC.</li>
-                        <li>Estimación de Capex y Opex.</li>
-                        <li>Optimización de costos.</li>
-                        <li>Desarrollo de planos de ingeniería y construcción.</li>
+                        <li>Elaboración de manual de operaciones y manejo de contingencias.</li>
+                        <li>Elaboración de la estimación de costos Capex y Opex.</li>
+                        <li>Desarrollo de planos detallados de ingeniería y construcción.</li>
                         <li>Elaboración de cronogramas de construcción.</li>
-                        <li>Plan de explotación de cantera.</li>
-                        <li>Plan de cierre y seguimiento post-cierre.</li>
-                        <li>Auditoría post-construcción.</li>
+                        <li>Elaboración de plan de explotación de cantera.</li>
                     </ul>
                 </Expandable>
             </div>         
@@ -161,7 +154,6 @@ import serv05 from '../../../assets/serv05.webp';
                     <li>Balance hidrológico de cuencas hidrográficas.</li>
                     <li>Diseño de estructuras hidráulicas para diferentes niveles de ingeniería.</li>
                     <li>Simulación unidimensional y bidimensional de estructuras hidráulicas.</li>
-                    <li>Diseño de estanques de subdrenaje para caminos y vías de acarreo.</li>
                 </ul>
                 </Expandable>
             </div>
@@ -252,11 +244,10 @@ import serv05 from '../../../assets/serv05.webp';
     margin-bottom: 50px; 
 }
 
-/* --- Button Styles (Ensure these or similar exist) --- */
 .btn {
-    display: inline-flex; /* For icon alignment */
+    display: inline-flex; 
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px; 
     padding: 10px 20px;
     font-family: var(--font-body);
     font-weight: 600;
@@ -265,29 +256,29 @@ import serv05 from '../../../assets/serv05.webp';
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-    border: 2px solid transparent; /* Base for bordered buttons */
+    border: 2px solid transparent; 
 }
 
-.btn-primary { /* Assuming this exists and is your main CTA button style */
+.btn-primary { 
     background-color: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
 }
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #005663; /* Darker primary */
+    background-color: #005663; 
     border-color: #005663;
     transform: translateY(-2px);
 }
 
-.btn-secondary { /* Style for "Back" or less prominent buttons */
+.btn-secondary { 
     background-color: transparent;
-    color: var(--color-secondary); /* Gris Carbón */
-    border-color: var(--color-secondary); /* Gris Carbón border */
+    color: var(--color-secondary); 
+    border-color: var(--color-secondary); 
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
-    background-color: var(--color-secondary); /* Gris Carbón background on hover */
+    background-color: var(--color-secondary); 
     color: var(--color-white);
     transform: translateY(-2px);
 }
@@ -298,7 +289,6 @@ import serv05 from '../../../assets/serv05.webp';
     display: inline-block; 
 }
 
-/* --- Scroll to Top Button Styles --- */
 #scrollToTopBtn {
     display: none; 
     position: fixed;
@@ -401,19 +391,15 @@ import serv05 from '../../../assets/serv05.webp';
 </style>
 <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-    // ... (Your existing menu toggle, smooth scroll, and other scripts) ...
 
-    // Scroll to Top Button Functionality
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
     if (scrollToTopBtn) {
-        // Show or hide the button based on scroll position
         window.onscroll = function() {
             scrollFunction();
         };
 
         function scrollFunction() {
-            // Show button if scrolled down more than (e.g.) 300px
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollToTopBtn.classList.add("visible");
             } else {
@@ -421,15 +407,12 @@ import serv05 from '../../../assets/serv05.webp';
             }
         }
 
-        // When the user clicks on the button, scroll to the top of the document
         scrollToTopBtn.addEventListener("click", () => {
-            // For modern browsers with smooth scroll support:
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
 
-            // For older browsers (fallback, though `html { scroll-behavior: smooth; }` should cover many)
             // document.body.scrollTop = 0; // For Safari
             // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         });

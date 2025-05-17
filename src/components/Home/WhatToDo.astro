@@ -28,7 +28,6 @@ import 'swiper/css/pagination';
                     </div>
                 </div>
             </div>
-
             <div class="swiper-slide">
                 <div class="service-card">
                     <Image src={what02} alt="Consultoría Técnica Especializada" class="service-card-img"/>
@@ -169,21 +168,6 @@ import 'swiper/css/pagination';
     color: var(--color-secondary);
     line-height: 1.7;
 }
-
-.services-swiper {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 60px; 
-    position: relative;
-    overflow: hidden; 
-}
-
-.swiper-slide {
-   display: flex; 
-   height: auto; 
-   align-items: stretch;
-}
-
 .service-card {
     background-color: var(--color-white);
     border-radius: 8px;
@@ -196,10 +180,7 @@ import 'swiper/css/pagination';
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
 }
-.swiper-slide:hover .service-card { 
-    transform: translateY(-6px);
-    box-shadow: 0 8px 30px rgba(47, 62, 70, 0.18);
-}
+
 
 .service-card-img {
     width: 100%;
@@ -207,7 +188,6 @@ import 'swiper/css/pagination';
     object-fit: cover;
     display: block;
 }
-
 .service-card-content {
     padding: 25px;
     flex-grow: 1;
@@ -231,50 +211,6 @@ import 'swiper/css/pagination';
     flex-grow: 1;
 }
 
-.services-swiper .swiper-pagination-bullet {
-    background-color: var(--color-secondary); 
-    opacity: 0.5;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.services-swiper .swiper-pagination-bullet-active {
-    background-color: var(--color-primary); 
-    opacity: 1;
-}
-
-.services-swiper .swiper-button-prev,
-.services-swiper .swiper-button-next {
-    color: var(--color-primary); 
-    background-color: rgba(255, 255, 255, 0.873); 
-    padding: 5px; 
-    transition: color 0.3s ease;
-    height: 40px; 
-    width: 40px; 
-    margin-top: -30px; 
-}
-
-.services-swiper .swiper-button-prev:hover,
-.services-swiper .swiper-button-next:hover {
-    color: var(--color-secondary); 
-}
-
-.services-swiper .swiper-button-prev::after,
-.services-swiper .swiper-button-next::after {
-    font-size: 1.2rem; 
-    font-weight: 700;
-}
-
-@media (max-width: 768px) {
-    .services-swiper .swiper-button-prev {
-        left: 5px; 
-    }
-    .services-swiper .swiper-button-next {
-        right: 5px; 
-    }
-     .services-swiper {
-        padding-bottom: 50px; 
-     }
-}
 </style>
 <script>
 

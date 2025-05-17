@@ -251,6 +251,69 @@ const {
 				margin-bottom: 40px;
 			}
 		}
+
+		.services-swiper {
+			width: 100%;
+			padding-top: 20px;
+			padding-bottom: 60px; 
+			position: relative;
+			overflow: hidden; 
+		}
+
+		.swiper-slide {
+			display: flex; 
+			height: auto; 
+			align-items: stretch;
+		}
+
+		.swiper-slide:hover .service-card { 
+			transform: translateY(-6px);
+			box-shadow: 0 8px 30px rgba(47, 62, 70, 0.18);
+		}
+		.services-swiper .swiper-pagination-bullet {
+			background-color: var(--color-secondary); 
+			opacity: 0.5;
+			transition: background-color 0.3s ease, opacity 0.3s ease;
+		}
+
+		.services-swiper .swiper-pagination-bullet-active {
+			background-color: var(--color-primary); 
+			opacity: 1;
+		}
+
+		.services-swiper .swiper-button-prev,
+		.services-swiper .swiper-button-next {
+			color: var(--color-primary); 
+			background-color: rgba(255, 255, 255, 0.873); 
+			padding: 5px; 
+			transition: color 0.3s ease;
+			height: 40px; 
+			width: 40px; 
+			margin-top: -30px; 
+		}
+
+		.services-swiper .swiper-button-prev:hover,
+		.services-swiper .swiper-button-next:hover {
+			color: var(--color-secondary); 
+		}
+
+		.services-swiper .swiper-button-prev::after,
+		.services-swiper .swiper-button-next::after {
+			font-size: 1.2rem; 
+			font-weight: 700;
+		}
+
+		@media (max-width: 768px) {
+			.services-swiper .swiper-button-prev {
+				left: 5px; 
+			}
+			.services-swiper .swiper-button-next {
+				right: 5px; 
+			}
+			.services-swiper {
+				padding-bottom: 50px; 
+			}
+		}
   </style>
 
 <script is:inline>
@@ -305,13 +368,13 @@ const {
 					if (isExpanded) {
 						this.setAttribute('aria-expanded', 'false');
 						this.querySelector('.expandable-icon').textContent = '+';
-						content.style.maxHeight = null; // Collapse
+						content.style.maxHeight = null; 
 						content.classList.remove('open');
 					} else {
 						this.setAttribute('aria-expanded', 'true');
-						this.querySelector('.expandable-icon').textContent = '-'; // Or use rotate transform for '+'
+						this.querySelector('.expandable-icon').textContent = '-'; 
 						content.classList.add('open');
-						content.style.maxHeight = content.scrollHeight + "px"; // Expand
+						content.style.maxHeight = content.scrollHeight + "px"; 
 					}
 				}
 			});

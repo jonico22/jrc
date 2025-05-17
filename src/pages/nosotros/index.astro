@@ -1,4 +1,8 @@
 ---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import ven01 from '../../assets/ven01.webp';
@@ -6,9 +10,10 @@ import ven02 from '../../assets/ven02.webp';
 import ven03 from '../../assets/ven03.webp';
 import ven04 from '../../assets/ven04.webp';
 import ven05 from '../../assets/ven05.webp';
-import ven06 from '../../assets/ven06.webp';
 import ven07 from '../../assets/ven07.webp';
 import Brochure from '../../components/Brochure.astro';
+
+
 ---
 
 <Layout title="Nosotros - Jrc Ingenieros y Consultores" description="Nosotors de JRC Ingenieros y Consultores">
@@ -21,7 +26,6 @@ import Brochure from '../../components/Brochure.astro';
         </div>
     </section>
    
-
     <section id="proposito" class="section purpose-section bg-white">
         <div class="container narrow-container animate-on-scroll"> 
             <h2 class="section-title">Nuestro Propósito</h2>
@@ -53,52 +57,115 @@ import Brochure from '../../components/Brochure.astro';
             <p class="advantages-intro">
                 En JRC Ingenieros y Consultores S.A.C. nos destacamos por ofrecer un valor diferencial en cada uno de nuestros proyectos. Las más resaltantes son:
             </p>
-            <div class="advantages-grid">
-                <!-- Advantage 1 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven01} alt="Experiencia Multidisciplinaria" class="advantage-icon" /> 
-                    <h4>Experiencia Multidisciplinaria</h4>
-                    <p>Equipo técnico altamente calificado con amplia experiencia en diversas áreas, abordando proyectos de forma integral.</p>
+            <div class="swiper services-swiper">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                                <Image src={ven01} alt="Experiencia Multidisciplinaria" class="advantage-icon" /> 
+                                <h4>Experiencia Multidisciplinaria</h4>
+                                <p>Equipo técnico altamente calificado con amplia experiencia en diversas áreas, abordando proyectos de forma integral.</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                            <Image src={ven02} alt="Compromiso Ambiental" class="advantage-icon" /> 
+                            <h4>Compromiso Ambiental</h4>
+                            <p>Integramos prácticas responsables y soluciones sostenibles que generan un impacto positivo.</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                            <Image src={ven03} alt="Calidad y Cumplimiento" class="advantage-icon" /> 
+                            <h4>Calidad y Cumplimiento</h4>
+                            <p>Garantizamos altos estándares de calidad, cumpliendo rigurosamente con plazos y normativas.</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                            <Image src={ven04} alt="Atención Personalizada" class="advantage-icon" /> 
+                            <h4>Atención Personalizada</h4>
+                            <p>Entendemos a fondo las necesidades de nuestros clientes, brindando asesoría cercana y soluciones a medida.</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                            <Image src={ven05} alt="Tecnología Avanzada" class="advantage-icon" /> 
+                            <h4>Tecnología Avanzada</h4>
+                            <p>Aplicamos tecnologías modernas y software especializado para optimizar diseño, análisis y supervisión.</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="advantage-card animate-on-scroll">
+                            <Image src={ven07} alt="Reputación y Confianza" class="advantage-icon" /> 
+                            <h4>Reputación y Confianza</h4>
+                            <p>Nuestra trayectoria y clientes satisfechos avalan la calidad y seriedad de nuestros servicios.</p>
+                        </div>
+                        </div>
                 </div>
-                <!-- Advantage 2 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven02} alt="Compromiso Ambiental" class="advantage-icon" /> 
-                    <h4>Compromiso Ambiental</h4>
-                    <p>Integramos prácticas responsables y soluciones sostenibles que generan un impacto positivo.</p>
-                </div>
-                <!-- Advantage 3 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven03} alt="Calidad y Cumplimiento" class="advantage-icon" /> 
-                    <h4>Calidad y Cumplimiento</h4>
-                    <p>Garantizamos altos estándares de calidad, cumpliendo rigurosamente con plazos y normativas.</p>
-                </div>
-                <!-- Advantage 4 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven04} alt="Atención Personalizada" class="advantage-icon" /> 
-                    <h4>Atención Personalizada</h4>
-                    <p>Entendemos a fondo las necesidades de nuestros clientes, brindando asesoría cercana y soluciones a medida.</p>
-                </div>
-                <!-- Advantage 5 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven05} alt="Tecnología Avanzada" class="advantage-icon" /> 
-                    <h4>Tecnología Avanzada</h4>
-                    <p>Aplicamos tecnologías modernas y software especializado para optimizar diseño, análisis y supervisión.</p>
-                </div>
-                <!-- Advantage 6 -->
-                <!--div class="advantage-card animate-on-scroll">
-                    <Image src={ven06} alt="Innovación Continua" class="advantage-icon" /> 
-                    <h4>Innovación Continua</h4>
-                    <p>Promovemos una cultura de mejora constante, manteniéndonos a la vanguardia del sector.</p>
-                </div-->
-                 <!-- Advantage 7 -->
-                <div class="advantage-card animate-on-scroll">
-                    <Image src={ven07} alt="Reputación y Confianza" class="advantage-icon" /> 
-                    <h4>Reputación y Confianza</h4>
-                    <p>Nuestra trayectoria y clientes satisfechos avalan la calidad y seriedad de nuestros servicios.</p>
-                </div>
+                 <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
+
+    <section id="proyectos-destacados-tabs" class="section featured-projects-tabs-section bg-light"> 
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <p class="section-subtitle">
+                Explore nuestra experiencia a través de una selección de proyectos clave en el sector.
+            </p>
+
+            <div class="project-tabs-container animate-on-scroll">
+                <div class="project-tab-buttons">
+                    <button class="project-tab-button active" data-projecttab="proyecto-alfa-tab">Ingenieria depósito de relaves 5</button>
+                    <button class="project-tab-button" data-projecttab="proyecto-beta-tab">Recrecimiento DHP</button>
+                    <button class="project-tab-button" data-projecttab="proyecto-gamma-tab">Supervisión de la intalación de Geomembrana</button>
+                    <button class="project-tab-button" data-projecttab="proyecto-delta-tab">Supervisión del Movimiento de tierra</button>
+                </div>
+
+                <div class="project-tab-content-wrapper">
+
+                    <div id="proyecto-alfa-tab" class="project-tab-content active">
+                        <h3 class="project-tab-title">Etapa V Ore Company SAC - Caraz - Huaraz</h3>
+                        <div class="project-photo-grid">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro01-img01.webp" alt="Proyecto  Foto 1">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro01-img02.webp" alt="Proyecto  Foto 2">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro01-img03.webp" alt="Proyecto  Foto 3">
+                        </div>
+                    </div>
+
+                    <div id="proyecto-beta-tab" class="project-tab-content">
+                        <h3 class="project-tab-title">Depósito de relaves Nº3 Ore Company SAC - Caraz - Huaraz</h3>
+                        <div class="project-photo-grid">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro02-img01.webp" alt="Proyecto  Foto 1">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro02-img02.webp" alt="Proyecto  Foto 2">
+                        </div>
+                    </div>
+
+                    <div id="proyecto-gamma-tab" class="project-tab-content">
+                        <h3 class="project-tab-title">Depósito de relaves 4 - La Joya Mining SAC - La Joya - Arequipa</h3>
+                        <div class="project-photo-grid">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro03-img01.webp" alt="Proyecto  Foto 1">
+                        </div>
+                    </div>
+
+                    <div id="proyecto-delta-tab" class="project-tab-content">
+                        <h3 class="project-tab-title">Depósito de relaves 4 GRUPO QHUYA S.A.C. - La Joya - Arequipa</h3>
+                        <div class="project-photo-grid">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro04-img01.webp" alt="Proyecto Foto 1">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro04-img02.webp" alt="Proyecto Foto 2">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro04-img03.webp" alt="Proyecto Foto 3">
+                            <img src="https://pub-92e9345e6dd547f7850b3cb83cd3e6e3.r2.dev/pro04-img04.webp" alt="Proyecto Foto 4">
+                        </div>
+                    </div>
+
+                </div> 
+            </div> 
+
+        </div> 
+    </section>
+
 
 </Layout>
 
@@ -126,7 +193,6 @@ import Brochure from '../../components/Brochure.astro';
     margin-top: -20px; 
 }
 
-/* --- Mission & Vision Section --- */
 .mission-vision-section {
     background-color: var(--color-neutral-light); 
 }
@@ -160,7 +226,7 @@ import Brochure from '../../components/Brochure.astro';
 }
 
 .advantages-section {
-    padding: 20px 0 80px;
+    padding: 20px 0 30px;
 }
 .advantages-intro {
     text-align: center;
@@ -178,9 +244,8 @@ import Brochure from '../../components/Brochure.astro';
     background-color: var(--color-neutral-light); 
     padding: 30px 25px;
     border-radius: 8px;
-    text-align: center; /* Align content left within card */
-    /* box-shadow: 0 4px 15px rgba(47, 62, 70, 0.07); */
-    border: 1px solid #ddd; /* Subtle border */
+    text-align: center; 
+    border: 1px solid #ddd; 
     display: flex;
     flex-direction: column;
   align-items: center;
@@ -213,13 +278,12 @@ import Brochure from '../../components/Brochure.astro';
 .advantage-card.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
 .advantage-card.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
 
-/* --- Responsive Adjustments --- */
-@media (min-width: 768px) { /* Tablet and up for Mision/Vision */
+@media (min-width: 768px) { 
     .mission-vision-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-columns: repeat(2, 1fr); 
     }
     .mission-vision-card {
-        text-align: left; /* Align text left in cards */
+        text-align: left;
     }
 }
 
@@ -252,3 +316,256 @@ import Brochure from '../../components/Brochure.astro';
     }
 }
 </style>
+
+<style>
+
+.featured-projects-tabs-section {
+   padding: 40px 0 80px;
+}
+.featured-projects-tabs-section .section-title {
+    margin-bottom: 20px;
+}
+.featured-projects-tabs-section .section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    font-size: 1.05rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+.project-tabs-container {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(47, 62, 70, 0.1);
+    overflow: hidden; 
+}
+
+.project-tab-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    background-color: var(--color-neutral-light); 
+    border-bottom: 1px solid #d8d8d8; 
+}
+
+.project-tab-button {
+    flex: 1 1 auto; 
+    padding: 15px 20px;
+    font-family: var(--font-body);
+    font-size: 1rem; 
+    font-weight: 600;
+    color: var(--color-secondary);
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #d8d8d8;
+    border-bottom: 3px solid transparent; 
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease;
+    outline: none;
+    white-space: nowrap; 
+}
+.project-tab-buttons button:last-child {
+    border-right: none;
+}
+
+.project-tab-button:hover {
+    background-color: #e7e7e7;
+    color: var(--color-primary);
+}
+
+.project-tab-button.active {
+    color: var(--color-primary); 
+    background-color: var(--color-white);
+    border-bottom-color: var(--color-primary);
+    font-weight: 700;
+}
+
+.project-tab-content-wrapper {
+    padding: 30px;
+}
+
+.project-tab-content {
+    display: none;
+    animation: fadeInTabContent 0.5s ease-out;
+}
+.project-tab-content.active {
+    display: block; 
+}
+
+.project-tab-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center; 
+}
+
+.project-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.project-photo-grid img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
+}
+.project-photo-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+
+@keyframes fadeInTabContent {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-cta-container { 
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .project-tab-buttons {
+         overflow-x: auto; 
+        justify-content: flex-start; 
+    }
+    .project-tab-button {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+        flex-basis: 50%; 
+    }
+     .project-tab-content-wrapper {
+        padding: 20px;
+    }
+    .project-tab-title {
+        font-size: 1.3rem;
+    }
+    .project-photo-grid img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-tab-button {
+        flex-basis: 100%; 
+        border-right: none; 
+        border-bottom: 1px solid #d8d8d8; 
+    }
+    .project-tab-button.active {
+        border-bottom-color: var(--color-primary); 
+    }
+    .project-tab-buttons button:last-child {
+        border-bottom: none; 
+    }
+    .project-photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+     .project-photo-grid img {
+        height: 200px;
+    }
+    .project-tab-title {
+        font-size: 1.1rem;
+        line-height: 24px;
+    }
+}
+</style>
+<script>
+import Swiper from 'swiper';
+import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+
+document.addEventListener('DOMContentLoaded', function () {
+    const servicesSwiper = new Swiper('.services-swiper', {
+        modules: [Navigation, Pagination,Autoplay],
+        // Optional parameters
+        loop: false, 
+        grabCursor: false,
+        speed: 400,
+        autoplay: {
+            delay: 2000,
+        },
+        slidesPerView: 1,
+        spaceBetween: 20, 
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 35
+            }
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, 
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+         // Accessibility
+        a11y: {
+            enabled: true,
+            prevSlideMessage: 'Diapositiva anterior',
+            nextSlideMessage: 'Diapositiva siguiente',
+            paginationBulletMessage: 'Ir a la diapositiva {{index}}',
+        },
+    });
+     // Optional: Add keyboard control
+     document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') {
+            servicesSwiper.slidePrev();
+        } else if (event.key === 'ArrowRight') {
+            servicesSwiper.slideNext();
+        }
+    });
+});
+
+   
+</script>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // Project Tabs Functionality
+    const projectTabsContainers = document.querySelectorAll('.project-tabs-container');
+
+    projectTabsContainers.forEach(container => {
+        const tabButtons = container.querySelectorAll('.project-tab-button');
+        const tabContents = container.querySelectorAll('.project-tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTabId = button.dataset.projecttab;
+
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                button.classList.add('active');
+
+                const targetContent = container.querySelector(`#${targetTabId}`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    });
+});
+</script>
+
