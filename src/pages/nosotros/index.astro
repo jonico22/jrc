@@ -85,11 +85,11 @@ import Brochure from '../../components/Brochure.astro';
                     <p>Aplicamos tecnologías modernas y software especializado para optimizar diseño, análisis y supervisión.</p>
                 </div>
                 <!-- Advantage 6 -->
-                <div class="advantage-card animate-on-scroll">
+                <!--div class="advantage-card animate-on-scroll">
                     <Image src={ven06} alt="Innovación Continua" class="advantage-icon" /> 
                     <h4>Innovación Continua</h4>
                     <p>Promovemos una cultura de mejora constante, manteniéndonos a la vanguardia del sector.</p>
-                </div>
+                </div-->
                  <!-- Advantage 7 -->
                 <div class="advantage-card animate-on-scroll">
                     <Image src={ven07} alt="Reputación y Confianza" class="advantage-icon" /> 
@@ -252,24 +252,3 @@ import Brochure from '../../components/Brochure.astro';
     }
 }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // ... (Your existing menu toggle script) ...
-
-    // Scroll Animation
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // observer.unobserve(entry.target); // Optional: stop observing after first animation
-            }
-        });
-    }, { threshold: 0.1 });
-    animatedElements.forEach(el => { observer.observe(el); });
-
-    // If using AOS, initialize it:
-    // AOS.init({ duration: 700, once: true });
-});
-</script>

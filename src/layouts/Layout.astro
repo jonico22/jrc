@@ -233,6 +233,9 @@ const {
 			opacity: 1;
 			transform: translateY(0);
 		}
+		html {
+			scroll-behavior: smooth;
+		}
 		@keyframes fadeInUp { 
 			to {
 				opacity: 1;
@@ -326,5 +329,61 @@ const {
 		}, { threshold: 0.1 });
 		animatedElements.forEach(el => { observer.observe(el); });
     }
+});
+
+</script>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+
+    function smoothScrollTo(targetElement, offset = 0) { 
+        if (targetElement) {
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    function scrollToHash() {
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1); 
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                setTimeout(() => {
+                    const header = document.querySelector('.main-header'); 
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    smoothScrollTo(targetElement, headerHeight + 40); 
+                }, 100); 
+            }
+        }
+    }
+
+    scrollToHash();
+
+    document.querySelectorAll('a[href^="#"], a[href^="' + window.location.pathname + '#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            let targetId;
+
+            if (href.startsWith('#')) {
+                targetId = href.substring(1);
+            } else if (href.startsWith(window.location.pathname + '#')) {
+                targetId = href.substring((window.location.pathname + '#').length);
+            }
+
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault(); 
+                    const header = document.querySelector('.main-header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    smoothScrollTo(targetElement, headerHeight + 20);
+                }
+            }
+        });
+    });
+
 });
 </script>

@@ -18,8 +18,8 @@ import  Expandable  from '../../components/Expandable.astro';
  <main class="services-page-content section">
   <div class="container">
 
-      <article class="service-detail-block animate-on-scroll">
-          <div class="service-image-container">
+      <article class="service-detail-block animate-on-scroll" id="ingenieria">
+          <div class="service-image-container" >
             <Image src={service01} alt="Servicios de Ingeniería JRC" class="main-service-img" />
           </div>
           <div class="service-text-content">
@@ -28,7 +28,7 @@ import  Expandable  from '../../components/Expandable.astro';
               <a href="/servicios/ingenieria" class="btn btn-primary service-detail-btn">Conocer Más</a>
           </div>
       </article>
-      <article class="service-detail-block alternate-layout animate-on-scroll">
+      <article class="service-detail-block alternate-layout animate-on-scroll" id="costos">
         <div class="service-image-container">
           <Image src={service02} alt="Costos y Presupuestos JRC" />
         </div>
@@ -55,7 +55,7 @@ import  Expandable  from '../../components/Expandable.astro';
               </Expandable>
           </div>      
       </article>
-      <article class="service-detail-block animate-on-scroll">
+      <article class="service-detail-block animate-on-scroll" id="construccion">
            <div class="service-image-container">
             <Image src={service03} alt="Servicios de Construcción JRC" class="main-service-img" />
           </div>
@@ -129,6 +129,7 @@ import  Expandable  from '../../components/Expandable.astro';
     flex: 1 1 50%; 
     min-width: 300px;
     color: var(--color-secondary);
+    text-align: justify;
 }
 
 .service-text-content h2 {
@@ -300,7 +301,7 @@ import  Expandable  from '../../components/Expandable.astro';
         margin-right: auto;
     }
     .service-text-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         display: block; 
         text-align: center;
     }

@@ -59,7 +59,6 @@ import serv05 from '../../../assets/serv05.webp';
                         <li>Estudios de licuefacción de relaves y minerales en pilas de lixiviación.</li>
                         <li>Estudios de riesgo sísmico.</li>
                         <li>Estudios de peligro sísmico probabilístico.</li>
-                        <li>Estudios de peligro sísmico determinístico.</li>
                     </ul>
                 </Expandable>
                 
@@ -170,6 +169,12 @@ import serv05 from '../../../assets/serv05.webp';
 
     </div>
 </main>
+<button id="scrollToTopBtn" title="Volver Arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 2.707 2.354 8.354a.5.5 0 1 1-.708-.708l6-6z"/>
+        <path fill-rule="evenodd" d="M7.5 1a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-1 0v-12a.5.5 0 0 1 .5-.5z"/>
+    </svg>
+</button>
 </Layout>
 
 <style>
@@ -215,6 +220,7 @@ import serv05 from '../../../assets/serv05.webp';
 .sub-service-text-content {
     flex: 1 1 55%; 
     min-width: 300px;
+    text-align: justify;
 }
 
 .sub-service-text-content h2 {
@@ -286,13 +292,66 @@ import serv05 from '../../../assets/serv05.webp';
     transform: translateY(-2px);
 }
 
-.btn-icon { /* For icons inside buttons */
+.btn-icon { 
     width: 16px;
     height: 16px;
-    display: inline-block; /* Or flex item handling */
-    /* Fill will be inherited if SVG uses currentColor */
+    display: inline-block; 
 }
 
+/* --- Scroll to Top Button Styles --- */
+#scrollToTopBtn {
+    display: none; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999; 
+    border: none;
+    outline: none;
+    background-color: var(--color-primary); 
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 0; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px; 
+    box-shadow: 0 4px 12px rgba(47, 62, 70, 0.3);
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+#scrollToTopBtn svg {
+    width: 24px; 
+    height: 24px;
+    vertical-align: middle; 
+}
+
+#scrollToTopBtn:hover {
+    background-color: #005663; 
+    transform: translateY(15px) scale(1.05); 
+}
+
+#scrollToTopBtn.visible { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    #scrollToTopBtn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
 
 @media (max-width: 992px) {
     .sub-service-block {
@@ -340,3 +399,40 @@ import serv05 from '../../../assets/serv05.webp';
     }
 }
 </style>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+    // ... (Your existing menu toggle, smooth scroll, and other scripts) ...
+
+    // Scroll to Top Button Functionality
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    if (scrollToTopBtn) {
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            // Show button if scrolled down more than (e.g.) 300px
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.classList.add("visible");
+            } else {
+                scrollToTopBtn.classList.remove("visible");
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", () => {
+            // For modern browsers with smooth scroll support:
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // For older browsers (fallback, though `html { scroll-behavior: smooth; }` should cover many)
+            // document.body.scrollTop = 0; // For Safari
+            // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    }
+});
+</script>

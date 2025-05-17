@@ -13,30 +13,35 @@ import service03 from '../../assets/service03.webp';
         <div class="main-services-grid animate-on-scroll">
 
             <div class="main-service-card" >
-                <div class="main-service-img-container">
-                    <Image src={service01} alt="Servicios de Ingeniería JRC" class="main-service-img" />
-                </div>
-                <div class="main-service-content">
-                    <h3>INGENIERÍA</h3>
-                </div>
+                <a href="/servicios#ingenieria">
+                    <div class="main-service-img-container">
+                        <Image src={service01} alt="Servicios de Ingeniería JRC" class="main-service-img" />
+                    </div>
+                    <div class="main-service-content">
+                        <h3>INGENIERÍA</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="main-service-card">
+                <a href="/servicios#costos">
+                    <div class="main-service-img-container">
+                        <Image src={service02} alt="Costos y Presupuestos JRC" class="main-service-img" />
+                    </div>
+                    <div class="main-service-content">
+                        <h3>COSTOS Y PRESUPUESTOS</h3>
+                    </div>
+                </a>
             </div>
 
             <div class="main-service-card">
-                <div class="main-service-img-container">
-                    <Image src={service02} alt="Costos y Presupuestos JRC" class="main-service-img" />
-                </div>
-                <div class="main-service-content">
-                    <h3>COSTOS Y PRESUPUESTOS</h3>
-                </div>
-            </div>
-
-            <div class="main-service-card">
-                 <div class="main-service-img-container">
-                    <Image src={service03} alt="Servicios de Construcción JRC" class="main-service-img" />
-                </div>
-                <div class="main-service-content">
-                    <h3>SERVICIOS DE CONSTRUCCIÓN</h3>
-                </div>
+                <a href="/servicios#construccion">
+                    <div class="main-service-img-container">
+                        <Image src={service03} alt="Servicios de Construcción JRC" class="main-service-img" />
+                    </div>
+                    <div class="main-service-content">
+                        <h3>SERVICIOS DE CONSTRUCCIÓN</h3>
+                    </div>
+                </a>
             </div>
 
         </div> 
@@ -75,6 +80,10 @@ import service03 from '../../assets/service03.webp';
 .main-service-card:hover {
     transform: scale(1.03); 
     box-shadow: 0 12px 35px rgba(47, 62, 70, 0.15);
+}
+
+.main-service-card a {
+    text-decoration: none;
 }
 
 .main-service-img-container {
