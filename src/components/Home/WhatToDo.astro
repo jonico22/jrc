@@ -7,7 +7,7 @@ import what04 from '../../assets/what04.webp';
 import what05 from '../../assets/what05.webp';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 
 ---
 
@@ -64,7 +64,6 @@ import 'swiper/css/pagination';
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -179,6 +178,7 @@ import 'swiper/css/pagination';
     height: 100%; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
+    min-height: 408px;
 }
 
 
@@ -215,11 +215,11 @@ import 'swiper/css/pagination';
 <script>
 
 import Swiper from 'swiper';
-import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+import { Navigation,Autoplay } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', function () {
     const servicesSwiper = new Swiper('.services-swiper', {
-        modules: [Navigation, Pagination,Autoplay],
+        modules: [Navigation,Autoplay],
         // Optional parameters
         loop: false, // Enable continuous loop mode
         grabCursor: false,
@@ -271,6 +271,20 @@ document.addEventListener('DOMContentLoaded', function () {
             servicesSwiper.slideNext();
         }
     });
+    // Optional: Add mouse stop on hover
+    const swiperContainer = document.querySelector('.services-swiper');
+    if (swiperContainer) {
+        swiperContainer.addEventListener('mouseenter', function () {
+            servicesSwiper.autoplay.stop();
+        });
+        swiperContainer.addEventListener('mouseleave', function () {
+            servicesSwiper.autoplay.start();
+        });
+        // Optional: Add touch control
+        swiperContainer.addEventListener('touchstart', function () {
+            servicesSwiper.autoplay.stop();
+        });
+    }
 });
 
    

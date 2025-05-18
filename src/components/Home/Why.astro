@@ -25,14 +25,7 @@ import why05 from '../../assets/why05.webp';
                     <Image src={why02} alt="Excelencia Técnica" />
                 </div>
                 <h3>Excelencia Técnica</h3>
-                <p>Garantizamos resultados gracias a un equipo altamente calificado y con experiencia comprobada.</p>
-            </div>
-            <div class="reason-card animate-on-scroll">
-                <div class="reason-icon">
-                    <Image src={why03} alt="Altos Estándares" />
-                </div>
-                <h3>Altos Estándares</h3>
-                <p>Aplicamos rigurosos controles de calidad, seguridad y cuidado ambiental, cumpliendo normativas.</p>
+                <p>Garantizamos óptimos resultados, gracias a que contamos con un equipo altamente calificado.</p>
             </div>
             <div class="reason-card animate-on-scroll">
                 <div class="reason-icon">
@@ -41,6 +34,9 @@ import why05 from '../../assets/why05.webp';
                 <h3>Innovación y Tecnología</h3>
                 <p>Integramos herramientas modernas para optimizar tiempos, costos y asegurar resultados precisos.</p>
             </div>
+           
+        </div> 
+         <div class="reasons-grid-center animate-on-scroll">
             <div class="reason-card animate-on-scroll">
                 <div class="reason-icon">
                     <Image src={why05} alt="Compromiso y Comunicación" />
@@ -48,8 +44,7 @@ import why05 from '../../assets/why05.webp';
                 <h3>Compromiso y Comunicación</h3>
                 <p>Nos involucramos como si sus proyectos fueran propios, manteniendo una comunicación clara y constante.</p>
             </div>
-
-        </div> 
+         </div>
     </div> 
 </section>
 
@@ -62,6 +57,16 @@ import why05 from '../../assets/why05.webp';
     gap: 30px; 
 }
 
+.reasons-grid-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; 
+}
+.reasons-grid-center .reason-card {
+    flex: 1;
+    max-width: 380px; 
+}
 .reason-card {
     background-color: var(--color-white);
     border-radius: 8px;
