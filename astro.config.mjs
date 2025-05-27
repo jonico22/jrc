@@ -2,13 +2,15 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from "@astrojs/vercel";
-
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(
-  )],
-
+  site: 'https://jrcingenierosconsultores.com',
+  integrations: [
+    react(),
+    sitemap(),
+  ],
   vite: {
     resolve: {
       // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
@@ -18,6 +20,5 @@ export default defineConfig({
       },
     },
   },
-
   adapter: vercel(),
 });
